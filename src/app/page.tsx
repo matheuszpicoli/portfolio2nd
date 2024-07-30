@@ -2,9 +2,9 @@
 import React from "react"
 
 //- Components
+import About from "@/app/components/About"
 import Profile from "@/app/components/Profile"
 import Projects from "@/app/components/Projects"
-import About from "@/app/components/About"
 
 export default function Portfolio(): React.JSX.Element {
 	return (

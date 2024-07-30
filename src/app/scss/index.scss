@@ -61,9 +61,9 @@ $title-size: 0.9em;
 }
 
 //- Imports
+@import "./About.scss";
 @import "./fonts.scss";
 @import "./layout.scss";
-@import "./About.scss";
 @import "./Profile.scss";
-@import "./Section.scss";
 @import "./Projects.scss";
+@import "./Section.scss";
