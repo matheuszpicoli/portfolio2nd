@@ -2,7 +2,7 @@
 import React from "react"
 
 //- API
-import * as Icon from "@/assets/api/iconAPI"
+import * as Icon from "@/app/api/iconAPI"
 
 //- Components
 import GetLink from "./GetLink"

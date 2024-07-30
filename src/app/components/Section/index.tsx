@@ -1,7 +1,7 @@
 //- React
 import React from "react"
 
-interface SectionProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
+interface SectionProps {
 	name: string
 	children: React.ReactNode
 }

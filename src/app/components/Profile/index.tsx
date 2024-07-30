@@ -5,7 +5,7 @@ import React from "react"
 import Image from "next/image"
 
 //- API
-import * as ImageAPI from "@/assets/api/imageAPI"
+import * as ImageAPI from "@/app/api/imageAPI"
 
 export default function Profile(): React.JSX.Element {
 	return (
