@@ -1,0 +1,18 @@
+.section {
+	display: flex;
+	flex-direction: column;
+
+	.section-title {
+		margin-bottom: 1em;
+
+		h2 {
+			@include title;
+		}
+	}
+
+	.section-content {
+		> div:not(:first-child) {
+			@include space-between;
+		}
+	}
+}

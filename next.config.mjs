@@ -1,4 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+/**
+ * @type {import("next").NextConfig}
+*/
+import path from "path"
 
-export default nextConfig;
+const nextConfig = {
+	sassOptions: {
+		includePaths: [path.join(process.cwd(), "styles")],
+	}
+}
+
+export default nextConfig

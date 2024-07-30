@@ -1,0 +1,69 @@
+//- Variables
+$bold-italic: "RethinkSans Bold Italic", sans-serif;
+$bold: "RethinkSans Bold", sans-serif;
+$extra-bold-italic: "RethinkSans Extra Bold Italic", sans-serif;
+$extra-bold: "RethinkSans Extra Bold", sans-serif;
+$font-size: 0.7em;
+$gray: #585858;
+$italic: "RethinkSans Italic", sans-serif;
+$medium-italic: "RethinkSans Medium Italic", sans-serif;
+$medium: "RethinkSans Medium", sans-serif;
+$red: #911a3e;
+$regular: "RethinkSans Regular", sans-serif;
+$semi-bold-italic: "RethinkSans Semi Bold Italic", sans-serif;
+$semi-bold: "RethinkSans Semi Bold", sans-serif;
+$title-size: 0.9em;
+
+//- Mixins
+@mixin userSelect($user-select) {
+	-moz-user-select: $user-select;
+	-ms-user-select: $user-select;
+	-webkit-user-select: $user-select;
+	user-select: $user-select;
+}
+
+@mixin transition($transition...) {
+	-o-transition: $transition;
+	-webkit-transition: $transition;
+	transition: $transition;
+}
+
+@mixin title {
+	font-family: $medium;
+	font-size: $title-size;
+}
+
+@mixin content {
+	color: $gray;
+	font-size: $font-size;
+}
+
+@mixin space-between {
+	margin: 1.2em 0;
+}
+
+//- Glogal Styles
+* {
+	color: #212121;
+	cursor: default;
+	font-family: $regular;
+	font-synthesis: none;
+	line-height: 1.6em;
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	text-rendering: optimizeLegibility;
+
+	&::selection {
+		background-color: $red;
+		color: #ffffff;
+	}
+}
+
+//- Imports
+@import "./fonts.scss";
+@import "./layout.scss";
+@import "./About.scss";
+@import "./Profile.scss";
+@import "./Section.scss";
+@import "./Projects.scss";
