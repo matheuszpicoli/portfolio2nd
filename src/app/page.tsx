@@ -5,6 +5,7 @@ import React from "react"
 import About from "@/app/components/About"
 import Profile from "@/app/components/Profile"
 import Projects from "@/app/components/Projects"
+import Technologies from "./components/Technologies"
 
 export default function Portfolio(): React.JSX.Element {
 	return (
@@ -12,6 +13,7 @@ export default function Portfolio(): React.JSX.Element {
 			<Profile />
 			<Projects />
 			<About />
+			<Technologies />
 		</React.Fragment>
 	)
 }

@@ -28,6 +28,12 @@ $title-size: 0.9em;
 	transition: $transition;
 }
 
+@mixin filter($filter...) {
+	-ms-filter: $filter;
+	-webkit-filter: $filter;
+	filter: $filter;
+}
+
 @mixin title {
 	font-family: $medium;
 	font-size: $title-size;
@@ -67,3 +73,4 @@ $title-size: 0.9em;
 @import "./Profile.scss";
 @import "./Projects.scss";
 @import "./Section.scss";
+@import "./Technologies.scss";

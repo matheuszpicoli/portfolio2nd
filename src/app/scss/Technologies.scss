@@ -1,0 +1,26 @@
+.section {
+	.technologies {
+		@include space-between;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 1.2em;
+		justify-content: center;
+
+		.technology-item {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+
+			.technology-logo {
+				font-size: 2em;
+				margin-bottom: 5px;
+			}
+
+			.technology-description {
+				@include content;
+			}
+		}
+	}
+}
