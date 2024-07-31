@@ -6,6 +6,7 @@
 	pointer-events: none;
 
 	.photo {
+		@include shadow;
 		@include userSelect(none);
 
 		.profile-figure {

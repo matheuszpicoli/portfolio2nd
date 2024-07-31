@@ -16,6 +16,7 @@
 
 	.cv {
 		.cv-button {
+			@include shadow;
 			@include transition(300ms);
 			padding: 5px;
 			cursor: pointer;

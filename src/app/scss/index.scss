@@ -48,6 +48,10 @@ $title-size: 0.9em;
 	margin: 1.2em 0;
 }
 
+@mixin shadow {
+	@include filter(drop-shadow(5px 5px 5px #00000040));
+}
+
 //- Glogal Styles
 * {
 	color: #212121;
