@@ -21,6 +21,8 @@
 
 			.technology-description {
 				@include content;
+				color: $red;
+				font-family: $bold;
 			}
 		}
 	}

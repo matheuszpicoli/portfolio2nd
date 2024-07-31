@@ -1,0 +1,84 @@
+.section {
+	.connect {
+		p {
+			@include content;
+		}
+
+		.connect-form {
+			@include space-between;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			gap: 1em;
+			width: 100%;
+
+			.form-field {
+				position: relative;
+
+				textarea {
+					min-height: 20dvh;
+					resize: none;
+				}
+
+				:where(input, textarea) {
+					@include content;
+					background: transparent;
+					border-radius: 2.5px;
+					border: 1px inset currentColor;
+					caret-color: $red;
+					cursor: text;
+					height: 3em;
+					outline: none;
+					padding: 0.5em;
+					width: 100%;
+
+					&:focus,
+					&:valid {
+						border: 1px inset $red;
+
+						~ label {
+							background-color: $red;
+							border-radius: 2.5px;
+							color: #ffffff;
+							font-family: $bold;
+							padding: 0 1em;
+							top: -10%;
+						}
+					}
+				}
+
+				label {
+					@include content;
+					@include transform(translateY(-50%));
+					@include transition(300ms);
+					left: 1em;
+					pointer-events: none;
+					position: absolute;
+					top: 45%;
+				}
+			}
+		}
+
+		.form-button {
+			@include shadow;
+			@include transition(300ms);
+			padding: 5px;
+			width: 40%;
+			align-self: center;
+			cursor: pointer;
+			background-color: transparent;
+			border: 1.5px solid $red;
+			border-radius: 5px;
+			font-family: $medium;
+
+			&:hover {
+				background-color: $red;
+				color: #ffffff;
+			}
+
+			&:active {
+				scale: .95;
+			}
+		}
+	}
+}

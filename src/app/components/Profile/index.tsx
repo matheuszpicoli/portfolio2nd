@@ -18,6 +18,7 @@ export default function Profile(): React.JSX.Element {
 						alt="Imagem de Perfil"
 						width={80}
 						height={80}
+						priority
 					/>
 				</figure>
 			</div>
