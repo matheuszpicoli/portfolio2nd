@@ -3,10 +3,11 @@ import React from "react"
 
 //- Components
 import About from "@/app/components/About"
+import Connect from "@/app/components/Connect"
 import Profile from "@/app/components/Profile"
 import Projects from "@/app/components/Projects"
-import Technologies from "./components/Technologies"
-import Connect from "./components/Connect"
+import Technologies from "@/app/components/Technologies"
+import Footer from "@/app/components/Footer"
 
 export default function Portfolio(): React.JSX.Element {
 	return (
@@ -16,6 +17,7 @@ export default function Portfolio(): React.JSX.Element {
 			<About />
 			<Technologies />
 			<Connect />
+			<Footer />
 		</React.Fragment>
 	)
 }

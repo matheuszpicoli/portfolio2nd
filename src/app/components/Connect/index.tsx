@@ -1,3 +1,5 @@
+"use client"
+
 //- React
 import React from "react"
 
@@ -9,13 +11,17 @@ export default function Connect(): React.JSX.Element {
 		<Section name="Conecte-se">
 			<div className="connect">
 				<p>Se meu trabalho lhe despertou interesse ou se você gostaria de compartilhar seu feedback sobre este site, ficarei feliz em trocar ideias.</p>
-				<form action="post" className="connect-form">
+				<form
+					action="post"
+					onSubmit={(): void => event?.preventDefault()}
+					className="connect-form"
+				>
 					<div className="form-field">
 						<input id="name" type="text" spellCheck={false} required />
 						<label htmlFor="name">Nome</label>
 					</div>
 					<div className="form-field">
-						<input id="email" type="email" spellCheck={false} required />
+						<input id="email" type="text" spellCheck={false} required />
 						<label htmlFor="email">E-mail</label>
 					</div>
 					<div className="form-field">

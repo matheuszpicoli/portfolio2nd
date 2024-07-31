@@ -21,6 +21,7 @@ export default function Technologies(): React.JSX.Element {
 		{ name: "Next JS", Logo: Icon.NextJS },
 		{ name: "Node JS", Logo: Icon.NodeJS },
 		{ name: "Oracle", Logo: Icon.Oracle },
+		{ name: "Python", Logo: Icon.Python },
 		{ name: "React", Logo: Icon.React },
 		{ name: "SCSS", Logo: Icon.Scss },
 		{ name: "Tailwind", Logo: Icon.Tailwind },

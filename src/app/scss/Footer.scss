@@ -1,0 +1,19 @@
+footer {
+	@include space-between;
+	width: 100%;
+
+	p {
+		@include content;
+		display: block;
+		text-align: left;
+
+		> span {
+			color: $red;
+			font-family: $bold;
+		}
+
+		&:last-child {
+			margin-bottom: 4em;
+		}
+	}
+}
