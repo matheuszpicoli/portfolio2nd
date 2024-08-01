@@ -18,10 +18,10 @@ export default function FormField(props: FormFieldProps): React.JSX.Element {
 	return (
 		<div className="form-field">
 			{formType === "input" && (
-				<input id={id} {...(rest as React.InputHTMLAttributes<HTMLInputElement>)} />
+				<input id={id} {...rest as React.InputHTMLAttributes<HTMLInputElement>} />
 			)}
 			{formType === "textarea" && (
-				<textarea id={id} {...(rest as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}></textarea>
+				<textarea id={id} {...rest as React.TextareaHTMLAttributes<HTMLTextAreaElement>}></textarea>
 			)}
 			<label htmlFor={id}>{name}</label>
 		</div>

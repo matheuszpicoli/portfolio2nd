@@ -8,6 +8,7 @@
 		justify-content: center;
 
 		.technology-item {
+			@include transition(100ms);
 			align-items: center;
 			display: flex;
 			flex-direction: column;
@@ -23,6 +24,10 @@
 				@include content;
 				color: $red;
 				font-family: $bold;
+			}
+
+			&:hover {
+				scale: .9;
 			}
 		}
 	}

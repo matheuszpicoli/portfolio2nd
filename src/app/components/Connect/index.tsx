@@ -11,22 +11,21 @@ import * as Icon from "@/app/api/iconAPI"
 
 //- Components
 import FormField from "./FormField"
-import FormLink from "./FormLink"
 
 export default function Connect(): React.JSX.Element {
 	return (
 		<Section name="Conecte-se">
 			<div className="connect">
 				<div>
-					<FormLink href="https://github.com/matheuszpicoli" target="_blank" rel="noopener noreferrer">
+					<a href="https://github.com/matheuszpicoli" target="_blank" rel="noopener noreferrer">
 						<Icon.GitHub className="connect-icon" />
-					</FormLink>
-					<FormLink href="https://www.linkedin.com/in/matheus-zpicoli" target="_blank" rel="noopener noreferrer">
+					</a>
+					<a href="https://www.linkedin.com/in/matheus-zpicoli" target="_blank" rel="noopener noreferrer">
 						<Icon.LinkedIn className="connect-icon" />
-					</FormLink>
-					<FormLink href="mailto:matheuspicoli2011@gmail.com">
+					</a>
+					<a href="mailto:matheuspicoli2011@gmail.com">
 						<Icon.Mail className="connect-icon" />
-					</FormLink>
+					</a>
 					<p>Se meu trabalho lhe despertou interesse ou se você gostaria de compartilhar seu feedback sobre este site, ficarei feliz em trocar ideias.</p>
 				</div>
 				<form

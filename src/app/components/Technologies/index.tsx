@@ -24,6 +24,7 @@ export default function Technologies(): React.JSX.Element {
 		{ name: "Python", Logo: Icon.Python },
 		{ name: "React", Logo: Icon.React },
 		{ name: "SCSS", Logo: Icon.Scss },
+		{ name: "SQL Server", Logo: Icon.SQLServer },
 		{ name: "Tailwind", Logo: Icon.Tailwind },
 		{ name: "TypeScript", Logo: Icon.TypeScript },
 		{ name: "Vue JS", Logo: Icon.VueJS }

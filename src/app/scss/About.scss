@@ -16,23 +16,7 @@
 
 	.cv {
 		.cv-button {
-			@include shadow;
-			@include transition(300ms);
-			padding: 5px;
-			cursor: pointer;
-			background-color: transparent;
-			border: 1.5px solid $red;
-			border-radius: 5px;
-			font-family: $medium;
-
-			&:hover {
-				background-color: $red;
-				color: #ffffff;
-			}
-
-			&:active {
-				scale: .95;
-			}
+			@include button;
 		}
 	}
 }

@@ -60,7 +60,7 @@
 					&:valid {
 						border: 3px groove $red;
 
-						~ label {
+						+ label {
 							background-color: $red;
 							border-radius: 5px;
 							color: #ffffff;
@@ -84,24 +84,7 @@
 		}
 
 		.form-button {
-			@include shadow;
-			@include transition(300ms);
-			align-self: start;
-			background-color: transparent;
-			border-radius: 5px;
-			border: 1.5px solid $red;
-			cursor: pointer;
-			font-family: $medium;
-			padding: 5px;
-
-			&:hover {
-				background-color: $red;
-				color: #ffffff;
-			}
-
-			&:active {
-				scale: .95;
-			}
+			@include button;
 		}
 	}
 }
