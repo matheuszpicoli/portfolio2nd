@@ -50,6 +50,47 @@ $title-size: .9em;
 	background: linear-gradient($linear-gradient);
 }
 
+@mixin backdrop-filter($backdrop-filter...) {
+	-webkit-backdrop-filter: $backdrop-filter;
+	backdrop-filter: $backdrop-filter;
+}
+
+@mixin animation($animation...) {
+	-moz-animation: $animation;
+	-o-animation: $animation;
+	-webkit-animation: $animation;
+	animation: $animation;
+}
+
+@mixin animation-delay($animation-delay) {
+	-moz-animation-delay: $animation-delay;
+	-o-animation-delay: $animation-delay;
+	-webkit-animation-delay: $animation-delay;
+	animation-delay: $animation-delay;
+}
+
+@mixin keyframes($animation-name) {
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
 @mixin title {
 	font-family: $medium;
 	font-size: $title-size;
@@ -114,6 +155,8 @@ $title-size: .9em;
 @import "./fonts.scss";
 @import "./Footer.scss";
 @import "./layout.scss";
+@import "./modal.scss";
+@import "./Menu.scss";
 @import "./Profile.scss";
 @import "./Projects.scss";
 @import "./Section.scss";

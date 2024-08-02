@@ -1,0 +1,26 @@
+.navbar {
+	position: fixed;
+	right: .5em;
+	top: .5em;
+
+	.navbar-button {
+		@include transition(300ms);
+		background-color: transparent;
+		border: none;
+		opacity: .5;
+		outline: none;
+
+		.navbar-icon {
+			cursor: pointer;
+			font-size: 2.5em;
+
+			* {
+				color: $red;
+			}
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
