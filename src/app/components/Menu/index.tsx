@@ -22,6 +22,7 @@ export default function Menu(): React.JSX.Element {
 
 	const themeContext = useContext(Context.ThemeContext)
 	const theme = Context.getStoredTheme()
+
 	useLayoutEffect(() => {
 		if (modalOpen) {
 			const esc = (event: KeyboardEvent): void => {
@@ -31,11 +32,25 @@ export default function Menu(): React.JSX.Element {
 			return (): void => window.removeEventListener("keydown", esc)
 		}
 	}, [modalOpen])
+
 	const handleUrlButtonClick = (): void => {
 		navigator.clipboard.writeText(window.location.href) as Promise<void>
 		setUrlButtonText(urlButtonTextAfterClicked)
+
 		setTimeout((): void => setUrlButtonText(urlButtonTextBeforeClicked), 3000) as NodeJS.Timeout
 	}
+
+	const datalistItems: Array<string> = [
+		"Português",
+		"Inglês",
+		"Espanhol",
+		"GitHub",
+		"LinkedIn",
+		"Claro",
+		"Escuro",
+		urlButtonTextBeforeClicked,
+		"Código Fonte"
+	].sort()
 
 	return (
 		<React.Fragment>
@@ -53,7 +68,12 @@ export default function Menu(): React.JSX.Element {
 					<div className="modal-content">
 						<div className="modal-header">
 							<Icon.Search className="search-icon" />
-							<input type="text" placeholder={`Pesquisar`} autoFocus />
+							<input type="text" placeholder="Pesquisar" list="button-items" autoFocus />
+							<datalist id="button-items">
+								{datalistItems.map((item: string, index: number) => (
+									<option key={index} value={item} />
+								))}
+							</datalist>
 							<Icon.Close className="close-icon" onClick={(): void => setModalOpen(false)} />
 						</div>
 						<div className="modal-body">
