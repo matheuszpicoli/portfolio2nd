@@ -6,6 +6,7 @@ import React, { useState, useLayoutEffect } from "react"
 //- Icons
 import * as Icon from "@/app/api/iconAPI"
 import ModalSection from "./ModalSection"
+import ModalButton from "./ModalButton"
 
 export default function Menu(): React.JSX.Element {
 	const [modalOpen, setModalOpen] = useState<boolean>(false)
@@ -42,8 +43,23 @@ export default function Menu(): React.JSX.Element {
 							<Icon.Close className="close-icon" onClick={(): void => setModalOpen(false)} />
 						</div>
 						<div className="modal-body">
-							<ModalSection name="Menu">
-								<p>Conteúdo</p>
+							<ModalSection name="Idioma">
+								<ModalButton icon={Icon.Language} text="Português" />
+								<ModalButton icon={Icon.Language} text="Inglês" />
+								<ModalButton icon={Icon.Language} text="Espanhol" />
+							</ModalSection>
+							<ModalSection name="Sociais">
+								<ModalButton icon={Icon.GitHub} text="GitHub" />
+								<ModalButton icon={Icon.LinkedIn} text="LinkedIn" />
+							</ModalSection>
+							<ModalSection name="Tema">
+								<ModalButton icon={Icon.LightMode} text="Claro" />
+								<ModalButton icon={Icon.DarkMode} text="Escuro" />
+								<ModalButton icon={Icon.Laptop} text="Sistema" />
+							</ModalSection>
+							<ModalSection name="Sugestões">
+								<ModalButton icon={Icon.Url} text="Copiar Link" />
+								<ModalButton icon={Icon.CodeSymbol} text="Código Fonte" />
 							</ModalSection>
 						</div>
 					</div>
