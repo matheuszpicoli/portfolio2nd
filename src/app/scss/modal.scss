@@ -98,6 +98,10 @@
 							background-color: #bababa50;
 							cursor: default;
 							pointer-events: none;
+
+							* {
+								color: $red;
+							}
 						}
 					}
 				}

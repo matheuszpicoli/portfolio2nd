@@ -48,7 +48,7 @@ export function ThemeProvider(props: ThemeProviderProps) {
 	useLayoutEffect(() => {
 		document.body.style.background = theme.background
 		document.body.style.color = theme.color
-		document.body.style.transition = "500ms"
+		document.body.style.transition = "all 500ms ease-in-out"
 	}, [theme])
 
 	return (

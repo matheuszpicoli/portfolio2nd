@@ -16,7 +16,8 @@ import * as Context from "@/app/hooks/context/themeContext"
 export default function Menu(): React.JSX.Element {
 	const [modalOpen, setModalOpen] = useState<boolean>(false)
 
-	const theme = useContext(Context.ThemeContext)
+	const themeContext = useContext(Context.ThemeContext)
+	const theme = Context.getStoredTheme()
 
 	useLayoutEffect(() => {
 		if (modalOpen) {
@@ -60,8 +61,8 @@ export default function Menu(): React.JSX.Element {
 								<ModalButton icon={Icon.LinkedIn} text="LinkedIn" onClick={(): Window | null => window.open("https://www.linkedin.com/in/matheus-zpicoli/", "_blank")} />
 							</ModalSection>
 							<ModalSection name="Tema">
-								<ModalButton icon={Icon.LightMode} text="Claro" onClick={theme.setLightTheme} disabled={Context.getStoredTheme() === "light"} />
-								<ModalButton icon={Icon.DarkMode} text="Escuro" onClick={theme.setDarkTheme} disabled={Context.getStoredTheme() === "dark"} />
+								<ModalButton icon={Icon.LightMode} text="Claro" onClick={themeContext.setLightTheme} disabled={theme === "light"} />
+								<ModalButton icon={Icon.DarkMode} text="Escuro" onClick={themeContext.setDarkTheme} disabled={theme === "dark"} />
 							</ModalSection>
 							<ModalSection name="Sugestões">
 								<ModalButton icon={Icon.Url} text="Copiar Link" onClick={(): Promise<void> => navigator.clipboard.writeText(window.location.href)} />
