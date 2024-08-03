@@ -35,7 +35,7 @@ export default function Technologies(): React.JSX.Element {
 			<div className="technologies">
 				{technologies.map(({ name, Logo }, index) => (
 					<div key={index} className="technology-item">
-						<Logo className="technology-logo" />
+						<Logo className="technology-icon" />
 						<p className="technology-description">
 							{name}
 						</p>

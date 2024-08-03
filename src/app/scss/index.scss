@@ -92,6 +92,7 @@ $title-size: .9em;
 }
 
 @mixin title {
+	color: $red;
 	font-family: $medium;
 	font-size: $title-size;
 }
@@ -109,7 +110,7 @@ $title-size: .9em;
 	@include filter(drop-shadow(5px 5px 5px #00000040));
 }
 
-@mixin button {
+@mixin button($text-color: #212121, $hover-color: #ffffff) {
 	@include shadow;
 	@include transition(500ms);
 	align-self: flex-start;
@@ -117,13 +118,14 @@ $title-size: .9em;
 	border-radius: 5px;
 	border: 1.5px outset $red;
 	cursor: pointer;
+	color: $text-color;
 	font-family: $medium;
 	padding: 5px;
 
 	&:hover {
 		@include linear-gradient(to bottom left, $red, #d70b48);
 		border: 1.5px solid transparent;
-		color: #ffffff;
+		color: $hover-color;
 	}
 
 	&:active {
@@ -133,7 +135,7 @@ $title-size: .9em;
 
 //- Glogal Styles
 * {
-	color: #212121;
+	// color: #212121;
 	cursor: default;
 	font-family: $regular;
 	font-synthesis: none;

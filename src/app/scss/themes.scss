@@ -1,9 +1,29 @@
 body {
 	&.light-theme {
 		background-color: #e5e5e5;
+
+		:where(.form-button, .cv-button) {
+			@include button($text-color: #212121, $hover-color: #ffffff);
+		}
+
+		[class*="icon"] {
+			* {
+				color: #212121;
+			}
+		}
 	}
 
 	&.dark-theme {
 		background-color: #131516;
+
+		:where(.form-button, .cv-button) {
+			@include button($text-color: #afafaf, $hover-color: #212121);
+		}
+
+		[class*="icon"] {
+			* {
+				color: #afafaf;
+			}
+		}
 	}
 }

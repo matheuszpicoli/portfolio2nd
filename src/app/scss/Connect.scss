@@ -48,7 +48,9 @@
 					@include content;
 					background: transparent;
 					border-radius: 5px;
-					border: 3px groove currentColor;
+					border: none;
+					border-bottom: 1.5px solid currentColor;
+					border-left: 1.5px solid currentColor;
 					caret-color: $red;
 					cursor: text;
 					height: 3em;
@@ -81,10 +83,6 @@
 					top: 45%;
 				}
 			}
-		}
-
-		.form-button {
-			@include button;
 		}
 	}
 }
