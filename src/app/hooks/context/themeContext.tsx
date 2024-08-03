@@ -46,10 +46,17 @@ export function ThemeProvider(props: ThemeProviderProps) {
 	}
 
 	useLayoutEffect(() => {
-		document.body.style.background = theme.background
-		document.body.style.color = theme.color
+		if (themeName === "light") {
+			document.body.classList.remove("dark-theme")
+			document.body.classList.add("light-theme")
+		}
+		else if (themeName === "dark") {
+			document.body.classList.remove("light-theme")
+			document.body.classList.add("dark-theme")
+		}
+
 		document.body.style.transition = "all 500ms ease-in-out"
-	}, [theme])
+	}, [theme, themeName])
 
 	return (
 		<ThemeContext.Provider value={{ theme, setLightTheme, setDarkTheme }}>

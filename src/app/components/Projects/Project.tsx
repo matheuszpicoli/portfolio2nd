@@ -20,8 +20,8 @@ export default function Project(props: ProjectProps): React.JSX.Element {
 			<p className="project-title">{props.title}</p>
 			<div className="project-description">
 				<p>{props.description}</p>
-				<GetLink href={props.projectLink} icon={Icon.Url} />
-				<GetLink href={props.repositoryLink} icon={Icon.GitHub} />
+				<GetLink href={props.projectLink} icon={Icon.Url} newTab={true} />
+				<GetLink href={props.repositoryLink} icon={Icon.GitHub} newTab={true} />
 				<GetLink href="/" icon={Icon.Preview} newTab={false} />
 			</div>
 		</div>

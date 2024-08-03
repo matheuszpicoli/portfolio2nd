@@ -147,7 +147,9 @@ $title-size: .9em;
 		background-color: $red;
 		color: #ffffff;
 	}
+
 }
+
 
 //- Imports
 @import "./About.scss";
@@ -155,9 +157,10 @@ $title-size: .9em;
 @import "./fonts.scss";
 @import "./Footer.scss";
 @import "./layout.scss";
-@import "./modal.scss";
 @import "./Menu.scss";
+@import "./modal.scss";
 @import "./Profile.scss";
 @import "./Projects.scss";
 @import "./Section.scss";
 @import "./Technologies.scss";
+@import "./themes.scss";
