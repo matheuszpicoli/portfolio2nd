@@ -14,7 +14,11 @@ import ModalSection from "./ModalSection"
 import * as Context from "@/app/hooks/context/themeContext"
 
 export default function Menu(): React.JSX.Element {
+	const urlButtonTextBeforeClicked: string = "Copiar Link"
+	const urlButtonTextAfterClicked: string = "Link Copiado!"
+
 	const [modalOpen, setModalOpen] = useState<boolean>(false)
+	const [urlButtonText, setUrlButtonText] = useState<string>(urlButtonTextBeforeClicked)
 
 	const themeContext = useContext(Context.ThemeContext)
 	const theme = Context.getStoredTheme()
@@ -30,6 +34,13 @@ export default function Menu(): React.JSX.Element {
 			return (): void => window.removeEventListener("keydown", esc)
 		}
 	}, [modalOpen])
+
+	const handleUrlButtonClick = (): void => {
+		navigator.clipboard.writeText(window.location.href) as Promise<void>
+
+		setUrlButtonText(urlButtonTextAfterClicked)
+		setTimeout((): void => setUrlButtonText(urlButtonTextBeforeClicked), 3000) as NodeJS.Timeout
+	}
 
 	return (
 		<React.Fragment>
@@ -47,7 +58,7 @@ export default function Menu(): React.JSX.Element {
 					<div className="modal-content">
 						<div className="modal-header">
 							<Icon.Search className="search-icon" />
-							<input type="text" placeholder="Pesquisar" autoFocus />
+							<input type="text" placeholder={`Pesquisar`} autoFocus />
 							<Icon.Close className="close-icon" onClick={(): void => setModalOpen(false)} />
 						</div>
 						<div className="modal-body">
@@ -61,11 +72,11 @@ export default function Menu(): React.JSX.Element {
 								<ModalButton icon={Icon.LinkedIn} text="LinkedIn" onClick={(): Window | null => window.open("https://www.linkedin.com/in/matheus-zpicoli/", "_blank")} />
 							</ModalSection>
 							<ModalSection name="Tema">
-								<ModalButton icon={Icon.LightMode} text="Claro" onClick={themeContext.setLightTheme} disabled={theme === "light"} />
-								<ModalButton icon={Icon.DarkMode} text="Escuro" onClick={themeContext.setDarkTheme} disabled={theme === "dark"} />
+								<ModalButton icon={Icon.LightMode} text="Claro" onClick={(): void => themeContext.setLightTheme()} disabled={Boolean(theme === "light")} />
+								<ModalButton icon={Icon.DarkMode} text="Escuro" onClick={(): void => themeContext.setDarkTheme()} disabled={Boolean(theme === "dark")} />
 							</ModalSection>
 							<ModalSection name="Sugestões">
-								<ModalButton icon={Icon.Url} text="Copiar Link" onClick={(): Promise<void> => navigator.clipboard.writeText(window.location.href)} />
+								<ModalButton icon={Icon.Url} text={urlButtonText} onClick={(): void => handleUrlButtonClick()} disabled={Boolean(urlButtonText === urlButtonTextAfterClicked)} />
 								<ModalButton icon={Icon.CodeSymbol} text="Código Fonte" onClick={(): Window | null => window.open("https://github.com/matheuszpicoli/portfolio2nd", "_blank")} />
 							</ModalSection>
 						</div>

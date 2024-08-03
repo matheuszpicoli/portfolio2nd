@@ -7,6 +7,7 @@ import type { IconType } from "react-icons"
 interface LinkProps {
 	href: string
 	icon: IconType
+	newTab?: boolean
 }
 
 export default function GetLink(props: LinkProps): React.JSX.Element {
@@ -14,7 +15,7 @@ export default function GetLink(props: LinkProps): React.JSX.Element {
 		<a
 			className="project-link"
 			href={props.href}
-			target="_blank"
+			target={!props.newTab ? "_blank" : "_self"}
 			rel="noopener noreferrer"
 		>
 			<props.icon className="project-icon" />

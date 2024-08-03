@@ -13,7 +13,7 @@ export default function About(): React.JSX.Element {
 				<p>Minha linguagem de programação favorita é o <span>TypeScript</span> e o que mais gosto de utilizar é o <span>React</span> e o <span>Next</span>. Também curto bastante bancos de dados, como <span>MySQL</span> e <span>Oracle</span>.</p>
 			</div>
 			<div className="cv">
-				<button className="cv-button">
+				<button type="button" className="cv-button">
 					Ver currículo
 				</button>
 			</div>

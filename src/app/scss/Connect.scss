@@ -44,7 +44,7 @@
 					resize: none;
 				}
 
-				:where(input, textarea) {
+				:where(input[type="text"], textarea) {
 					@include content;
 					background: transparent;
 					border-radius: 5px;

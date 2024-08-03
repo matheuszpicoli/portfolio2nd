@@ -42,13 +42,13 @@ interface RootLayoutProps {
 
 export default function RootLayout(props: Readonly<RootLayoutProps>): React.JSX.Element {
 	return (
-		<html lang="pt-br">
-			<Theme.ThemeProvider>
+		<Theme.ThemeProvider>
+			<html lang="pt-br">
 				<body className="container">
 					<Menu />
 					{props.children}
 				</body>
-			</Theme.ThemeProvider>
-		</html>
+			</html>
+		</Theme.ThemeProvider>
 	)
 }

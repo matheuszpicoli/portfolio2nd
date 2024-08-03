@@ -7,7 +7,7 @@
 
 	.photo {
 		@include shadow;
-		@include userSelect(none);
+		@include user-select(none);
 
 		.profile-figure {
 			.profile-photo {

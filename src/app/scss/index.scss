@@ -15,7 +15,7 @@ $semi-bold: "RethinkSans Semi Bold", sans-serif;
 $title-size: .9em;
 
 //- Mixins
-@mixin userSelect($user-select) {
+@mixin user-select($user-select) {
 	-moz-user-select: $user-select;
 	-ms-user-select: $user-select;
 	-webkit-user-select: $user-select;
@@ -111,7 +111,7 @@ $title-size: .9em;
 
 @mixin button {
 	@include shadow;
-	@include transition(300ms);
+	@include transition(500ms);
 	align-self: flex-start;
 	background-color: transparent;
 	border-radius: 5px;
