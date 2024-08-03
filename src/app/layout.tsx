@@ -10,6 +10,9 @@ import "@/app/scss/index.scss"
 //- Components
 import Menu from "@/app/components/Menu"
 
+//- Context
+import * as Theme from "@/app/hooks/context/themeContext"
+
 export const metadata: Metadata = {
 	title: "Portfólio | Matheus Picoli",
 	description: "Meu portfólio pessoal, feito em Next JS com Typescript e SCSS.",
@@ -40,10 +43,12 @@ interface RootLayoutProps {
 export default function RootLayout(props: Readonly<RootLayoutProps>): React.JSX.Element {
 	return (
 		<html lang="pt-br">
-			<body className="container">
-				<Menu />
-				{props.children}
-			</body>
+			<Theme.ThemeProvider>
+				<body className="container">
+					<Menu />
+					{props.children}
+				</body>
+			</Theme.ThemeProvider>
 		</html>
 	)
 }

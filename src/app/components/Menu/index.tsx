@@ -1,15 +1,22 @@
 "use client"
 
 //- React
-import React, { useState, useLayoutEffect } from "react"
+import React, { useState, useLayoutEffect, useContext } from "react"
 
 //- Icons
 import * as Icon from "@/app/api/iconAPI"
-import ModalSection from "./ModalSection"
+
+//- Components
 import ModalButton from "./ModalButton"
+import ModalSection from "./ModalSection"
+
+//- Context
+import * as Context from "@/app/hooks/context/themeContext"
 
 export default function Menu(): React.JSX.Element {
 	const [modalOpen, setModalOpen] = useState<boolean>(false)
+
+	const theme = useContext(Context.ThemeContext)
 
 	useLayoutEffect(() => {
 		if (modalOpen) {
@@ -49,17 +56,16 @@ export default function Menu(): React.JSX.Element {
 								<ModalButton icon={Icon.Language} text="Espanhol" />
 							</ModalSection>
 							<ModalSection name="Sociais">
-								<ModalButton icon={Icon.GitHub} text="GitHub" />
-								<ModalButton icon={Icon.LinkedIn} text="LinkedIn" />
+								<ModalButton icon={Icon.GitHub} text="GitHub" onClick={(): Window | null => window.open("https://github.com/matheuszpicoli/", "_blank")} />
+								<ModalButton icon={Icon.LinkedIn} text="LinkedIn" onClick={(): Window | null => window.open("https://www.linkedin.com/in/matheus-zpicoli/", "_blank")} />
 							</ModalSection>
 							<ModalSection name="Tema">
-								<ModalButton icon={Icon.LightMode} text="Claro" />
-								<ModalButton icon={Icon.DarkMode} text="Escuro" />
-								<ModalButton icon={Icon.Laptop} text="Sistema" />
+								<ModalButton icon={Icon.LightMode} text="Claro" onClick={theme.setLightTheme} disabled={Context.getStoredTheme() === "light"} />
+								<ModalButton icon={Icon.DarkMode} text="Escuro" onClick={theme.setDarkTheme} disabled={Context.getStoredTheme() === "dark"} />
 							</ModalSection>
 							<ModalSection name="Sugestões">
-								<ModalButton icon={Icon.Url} text="Copiar Link" />
-								<ModalButton icon={Icon.CodeSymbol} text="Código Fonte" />
+								<ModalButton icon={Icon.Url} text="Copiar Link" onClick={(): Promise<void> => navigator.clipboard.writeText(window.location.href)} />
+								<ModalButton icon={Icon.CodeSymbol} text="Código Fonte" onClick={(): Window | null => window.open("https://github.com/matheuszpicoli/portfolio2nd", "_blank")} />
 							</ModalSection>
 						</div>
 					</div>
