@@ -7,6 +7,8 @@
 	}
 
 	.project-link {
+		text-decoration: none;
+
 		.project-icon {
 			@include shadow;
 			@include transition(300ms);
@@ -20,6 +22,16 @@
 
 		& :first-child {
 			margin-right: .6em;
+		}
+
+		&:last-child {
+			&::after {
+				color: $red;
+				content: "Ver mais";
+				font-family: $italic;
+				font-size: $font-size;
+				pointer-events: none;
+			}
 		}
 	}
 }

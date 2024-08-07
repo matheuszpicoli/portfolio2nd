@@ -5,7 +5,8 @@ import React from "react"
 import * as Icon from "@/app/api/iconAPI"
 
 //- Components
-import GetLink from "./GetLink"
+import ExternalLink from "./ExternalLink"
+import InternalLink from "./InternalLink"
 
 interface ProjectProps {
 	title: string
@@ -20,9 +21,9 @@ export default function Project(props: ProjectProps): React.JSX.Element {
 			<p className="project-title">{props.title}</p>
 			<div className="project-description">
 				<p>{props.description}</p>
-				<GetLink href={props.projectLink} icon={Icon.Url} newTab={true} />
-				<GetLink href={props.repositoryLink} icon={Icon.GitHub} newTab={true} />
-				<GetLink href="/" icon={Icon.Preview} newTab={false} />
+				<ExternalLink href={props.projectLink} icon={Icon.Url} newTab={true} />
+				<ExternalLink href={props.repositoryLink} icon={Icon.GitHub} newTab={true} />
+				<InternalLink />
 			</div>
 		</div>
 	)
