@@ -1,8 +1,4 @@
 .section {
-	.project-title {
-		@include title;
-	}
-
 	.project-description {
 		p {
 			@include content;

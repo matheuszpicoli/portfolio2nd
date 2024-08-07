@@ -64,10 +64,6 @@
 			.modal-section {
 				@include space-between;
 
-				.modal-section-title {
-					@include title;
-				}
-
 				.modal-section-content {
 					@include content;
 					@include space-between;

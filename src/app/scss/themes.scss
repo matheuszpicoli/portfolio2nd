@@ -6,6 +6,10 @@ body {
 			@include button($text-color: #212121, $hover-color: #ffffff);
 		}
 
+		:where(.modal-section-title, .name, .project-title, .section-title > h2) {
+			@include title($text-color: #212121);
+		}
+
 		[class*="icon"] {
 			* {
 				color: #212121;
@@ -17,12 +21,16 @@ body {
 		background-color: #131516;
 
 		:where(.form-button, .cv-button) {
-			@include button($text-color: #afafaf, $hover-color: #212121);
+			@include button($text-color: #cececf, $hover-color: #212121);
+		}
+
+		:where(.modal-section-title, .name, .project-title, .section-title > h2) {
+			@include title($text-color: #cececf);
 		}
 
 		[class*="icon"] {
 			* {
-				color: #afafaf;
+				color: #cececf;
 			}
 		}
 	}

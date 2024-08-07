@@ -3,7 +3,7 @@ $bold-italic: "RethinkSans Bold Italic", sans-serif;
 $bold: "RethinkSans Bold", sans-serif;
 $extra-bold-italic: "RethinkSans Extra Bold Italic", sans-serif;
 $extra-bold: "RethinkSans Extra Bold", sans-serif;
-$font-size: .7em;
+$font-size: .8em;
 $gray: #585858;
 $italic: "RethinkSans Italic", sans-serif;
 $medium-italic: "RethinkSans Medium Italic", sans-serif;
@@ -91,8 +91,8 @@ $title-size: .9em;
 	}
 }
 
-@mixin title {
-	color: $red;
+@mixin title($text-color: #212121) {
+	color: $text-color;
 	font-family: $medium;
 	font-size: $title-size;
 }

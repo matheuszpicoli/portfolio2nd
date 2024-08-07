@@ -21,10 +21,6 @@
 	.profile {
 		margin-left: 1em;
 
-		.name {
-			@include title;
-		}
-
 		.profession {
 			@include content;
 		}
