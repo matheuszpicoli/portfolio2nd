@@ -9,7 +9,7 @@ import * as Icon from "@/app/api/iconAPI"
 
 export default function InternalLink(): React.JSX.Element {
 	return (
-		<Link href="/" className="project-link">
+		<Link href="/projects" className="project-link">
 			<Icon.More className="project-icon" />
 		</Link>
 	)
