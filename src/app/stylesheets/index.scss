@@ -1,0 +1,57 @@
+/// @group fonts ----------------------------------------------------------------------------------
+$fonts: (
+    "RethinkSans Bold Italic",
+    "RethinkSans Bold",
+    "RethinkSans Extra Bold Italic",
+    "RethinkSans Extra Bold",
+    "RethinkSans Italic",
+    "RethinkSans Medium Italic",
+    "RethinkSans Medium",
+    "RethinkSans Regular",
+    "RethinkSans Semi Bold Italic",
+    "RethinkSans Semi Bold"
+);
+
+@each $font in $fonts {
+    @font-face {
+        font-family: "#{$font}";
+        src: url("../fonts/#{$font}.ttf") format("truetype");
+    }
+}
+
+/// @group variables ------------------------------------------------------------------------------
+$bold-italic: "RethinkSans Bold Italic", sans-serif;
+$bold: "RethinkSans Bold", sans-serif;
+$extra-bold-italic: "RethinkSans Extra Bold Italic", sans-serif;
+$extra-bold: "RethinkSans Extra Bold", sans-serif;
+$italic: "RethinkSans Italic", sans-serif;
+$medium-italic: "RethinkSans Medium Italic", sans-serif;
+$medium: "RethinkSans Medium", sans-serif;
+$regular: "RethinkSans Regular", sans-serif;
+$semi-bold-italic: "RethinkSans Semi Bold Italic", sans-serif;
+$semi-bold: "RethinkSans Semi Bold", sans-serif;
+
+/// @group themes ---------------------------------------------------------------------------------
+.light-theme {
+    --bg-color: #bababa;
+    --text-color: #111111;
+}
+
+.dark-theme {
+    --bg-color: #111111;
+    --text-color: #bababa;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/// @group global-styles --------------------------------------------------------------------------
+* {
+    box-sizing: border-box;
+    font-family: $regular;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+}
