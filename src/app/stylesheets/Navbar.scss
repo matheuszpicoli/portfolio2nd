@@ -1,0 +1,136 @@
+header {
+    @include sticky;
+    top: 0;
+    height: max-content;
+
+    .navbar {
+        @include backdrop-fiter(blur(30px));
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1em 2em;
+        width: 100%;
+
+        .logo {
+            font-family: $medium;
+            font-size: 1.3em;
+            pointer-events: none;
+
+            span {
+                color: $main-color;
+                font-family: $medium;
+            }
+        }
+
+        .actions {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: flex-start;
+
+            .dropdown-menu {
+                padding: 10px;
+                position: relative;
+
+                .dropdown-title {
+                    @include transition(color 150ms ease);
+                }
+
+                .submenu {
+                    @include backdrop-fiter(15px);
+                    background-color: $dropdown-color;
+                    border-radius: 5px;
+                    border: 2.5px solid darken($dropdown-color, 50%);
+                    display: flex;
+                    flex-direction: column;
+                    left: 0;
+                    max-height: 60dvh;
+                    width: max-content;
+                    max-width: 200px;
+                    overflow-x: auto;
+                    position: absolute;
+                    top: 100%;
+                    z-index: 1;
+
+                    &::-webkit-scrollbar {
+                        width: 2.5px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background-color: darken($dropdown-color, 50%);
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: $main-color;
+                        border-radius: 2.5px;
+                    }
+
+                    div {
+                        cursor: pointer;
+                        font-size: .95em;
+                        padding: 5px;
+
+                        &:hover {
+                            background-color: darken($dropdown-color, 50%);
+                        }
+                    }
+                }
+
+                &:last-of-type {
+                    margin-right: 20px;
+                }
+            }
+
+            :where(button[type="button"], select) {
+                @include transition(all 250ms ease);
+                @include user-select(none);
+                background-color: transparent;
+                border-radius: 2.5px;
+                border: none;
+                color: inherit;
+                cursor: pointer;
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+                justify-content: flex-start;
+                padding: 5px;
+
+                &:focus {
+                    outline: 2px solid $main-color;
+                }
+
+                &:hover {
+                    background-color: rgba($main-color, 30%);
+                }
+
+                &:active {
+                    outline: none;
+                    opacity: 1;
+                }
+            }
+
+            option {
+                color: #000000;
+                font-family: $medium;
+            }
+
+            .theme-button {
+                svg {
+                    @include transition(all 250ms ease);
+                    fill: $main-color;
+                    height: 15px;
+                    width: 15px;
+                }
+
+                &:hover {
+                    svg {
+                        fill: currentColor;
+                    }
+                }
+            }
+        }
+    }
+}

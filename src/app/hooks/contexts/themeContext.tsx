@@ -1,43 +1,45 @@
 "use client"
-import React, { createContext, useContext, useLayoutEffect, useState } from "react"
+import React, { createContext, useContext, useLayoutEffect, useState, useEffect } from "react"
 
-type Theme = "light" | "dark"
+declare type Theme = "light" | "dark" | null
 
-type ThemeContextType = {
+declare type ThemeContextType = {
     theme: Theme
     toggleTheme: () => void
 }
 
 export const ThemeContext = createContext<ThemeContextType>({} as ThemeContextType)
 
-interface ThemeProviderProps {
+declare interface ThemeProviderProps {
     children: React.ReactNode
 }
 
 export function ThemeProvider(props: ThemeProviderProps) {
-    const [theme, setTheme] = useState<Theme>((): Theme => {
-        const storedTheme = localStorage.getItem("theme")
+    const [theme, setTheme] = useState<Theme>(null)
 
-        return storedTheme as Theme
-    })
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const storedTheme = localStorage.getItem("theme") as Theme
 
-    useLayoutEffect((): void => {
-        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-
-        setTheme(prev => prev || (prefersDarkScheme ? "dark" : "light"))
+            if (storedTheme) setTheme(storedTheme)
+            else {
+                const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+                setTheme(prefersDarkScheme ? "dark" : "light")
+            }
+        }
     }, [])
 
     const toggleTheme = (): void => {
         setTheme((prev: Theme): Theme => {
             const newTheme: Theme = prev === "light" ? "dark" : "light"
-            localStorage.setItem("theme", newTheme)
 
+            if (typeof window !== "undefined") localStorage.setItem("theme", newTheme)
             return newTheme
         })
     }
 
-    useLayoutEffect((): void => {
-        document.body.style.transitionDuration = "500ms"
+    useLayoutEffect(() => {
+        document.body.style.transitionDuration = "250ms"
 
         document.body.classList.toggle("dark-theme", theme === "dark")
         document.body.classList.toggle("light-theme", theme === "light")

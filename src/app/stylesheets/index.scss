@@ -30,10 +30,98 @@ $medium: "RethinkSans Medium", sans-serif;
 $regular: "RethinkSans Regular", sans-serif;
 $semi-bold-italic: "RethinkSans Semi Bold Italic", sans-serif;
 $semi-bold: "RethinkSans Semi Bold", sans-serif;
+$main-color: #6f16cf;
+$dropdown-color: #ffffff20;
+
+/// @group mixins ---------------------------------------------------------------------------------
+@mixin filter($filters...) {
+    -ms-filter: $filters;
+    -webkit-filter: $filters;
+    filter: $filters;
+}
+
+@mixin backdrop-fiter($backdrop-filters...) {
+    -webkit-backdrop-filter: $backdrop-filters;
+    backdrop-filter: $backdrop-filters;
+}
+
+@mixin transform($tranforms...) {
+    -moz-transform: $tranforms;
+    -ms-transform: $tranforms;
+    -o-transform: $tranforms;
+    -webkit-transform: $tranforms;
+    transform: $tranforms;
+}
+
+@mixin animation($animations...) {
+    -moz-animation: $animations;
+    -ms-animation: $animations;
+    -o-animation: $animations;
+    -webkit-animation: $animations;
+    animation: $animations;
+}
+
+@mixin animation-delay($animation-delay) {
+    -moz-animation-delay: $animation-delay;
+    -ms-animation-delay: $animation-delay;
+    -o-animation-delay: $animation-delay;
+    -webkit-animation-delay: $animation-delay;
+    animation-delay: $animation-delay;
+}
+
+@mixin keyframes($animation-name) {
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin transition($transitions...) {
+    -moz-transition: $transitions;
+    -ms-transition: $transitions;
+    -o-transition: $transitions;
+    -webkit-transition: $transitions;
+    transition: $transitions;
+}
+
+@mixin linear-gradient($linear-gradient-properties...) {
+    background: -moz-linear-gradient($linear-gradient-properties);
+    background: -ms-linear-gradient($linear-gradient-properties);
+    background: -o-linear-gradient($linear-gradient-properties);
+    background: -webkit-linear-gradient($linear-gradient-properties);
+    background: linear-gradient($linear-gradient-properties);
+}
+
+@mixin sticky {
+    position: sticky;
+    position: -webkit-sticky;
+}
+
+@mixin user-select($user-select) {
+    -webkit-user-select: $user-select;
+    -moz-user-select: $user-select;
+    -ms-user-select: $user-select;
+    user-select: $user-select;
+}
 
 /// @group themes ---------------------------------------------------------------------------------
 .light-theme {
-    --bg-color: #bababa;
+    --bg-color: #a0a0a0;
     --text-color: #111111;
 }
 
@@ -50,8 +138,11 @@ body {
 /// @group global-styles --------------------------------------------------------------------------
 * {
     box-sizing: border-box;
+    cursor: default;
     font-family: $regular;
     margin: 0;
     padding: 0;
     text-rendering: optimizeLegibility;
 }
+
+@import "./Navbar.scss";

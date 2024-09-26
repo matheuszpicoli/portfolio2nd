@@ -1,12 +1,12 @@
 import "@/app/stylesheets/index.scss"
-import { ThemeProvider } from "@/app/hooks/themeContext"
+import { ThemeProvider } from "@/app/hooks/contexts/themeContext"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
     title: "Matheus Picoli | Portfólio"
 }
 
-interface RootLayoutProps {
+declare interface RootLayoutProps {
     children: React.ReactNode
 }
 
