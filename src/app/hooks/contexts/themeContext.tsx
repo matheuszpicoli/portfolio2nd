@@ -1,23 +1,23 @@
 "use client"
-import React, { createContext, useContext, useLayoutEffect, useState, useEffect } from "react"
+import React, { createContext, useContext, useLayoutEffect, useState } from "react"
 
-declare type Theme = "light" | "dark" | null
+type Theme = "light" | "dark" | null
 
-declare type ThemeContextType = {
+type ThemeContextType = {
     theme: Theme
     toggleTheme: () => void
 }
 
 export const ThemeContext = createContext<ThemeContextType>({} as ThemeContextType)
 
-declare interface ThemeProviderProps {
+interface ThemeProviderProps {
     children: React.ReactNode
 }
 
 export function ThemeProvider(props: ThemeProviderProps) {
     const [theme, setTheme] = useState<Theme>(null)
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (typeof window !== "undefined") {
             const storedTheme = localStorage.getItem("theme") as Theme
 
@@ -38,7 +38,7 @@ export function ThemeProvider(props: ThemeProviderProps) {
         })
     }
 
-    useLayoutEffect(() => {
+    useLayoutEffect((): void => {
         document.body.style.transitionDuration = "250ms"
 
         document.body.classList.toggle("dark-theme", theme === "dark")

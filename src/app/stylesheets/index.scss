@@ -31,7 +31,7 @@ $regular: "RethinkSans Regular", sans-serif;
 $semi-bold-italic: "RethinkSans Semi Bold Italic", sans-serif;
 $semi-bold: "RethinkSans Semi Bold", sans-serif;
 $main-color: #6f16cf;
-$dropdown-color: #ffffff20;
+$dropdown-color: #cccccc20;
 
 /// @group mixins ---------------------------------------------------------------------------------
 @mixin filter($filters...) {
@@ -121,7 +121,7 @@ $dropdown-color: #ffffff20;
 
 /// @group themes ---------------------------------------------------------------------------------
 .light-theme {
-    --bg-color: #a0a0a0;
+    --bg-color: #bababa;
     --text-color: #111111;
 }
 

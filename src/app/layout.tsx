@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     title: "Matheus Picoli | Portfólio"
 }
 
-declare interface RootLayoutProps {
+interface RootLayoutProps {
     children: React.ReactNode
 }
 

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react"
 
-declare interface DropdownMenuProps extends React.HTMLAttributes<HTMLDivElement> {
+interface DropdownMenuProps extends React.HTMLAttributes<HTMLDivElement> {
     name: string
     menu: string
 }
