@@ -36,11 +36,10 @@ header {
                 position: relative;
 
                 .dropdown-title {
-                    @include transition(color 150ms ease);
+                    @include transition(color 300ms ease);
                 }
 
                 .submenu {
-                    @include backdrop-fiter(15px);
                     background-color: $dropdown-color;
                     border-radius: 5px;
                     border: 2.5px solid darken($dropdown-color, 50%);
@@ -69,6 +68,7 @@ header {
                     }
 
                     div {
+                        @include backdrop-fiter(brightness(0) blur(30px));
                         cursor: pointer;
                         font-size: .95em;
                         padding: 5px;

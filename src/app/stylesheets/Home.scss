@@ -1,0 +1,63 @@
+.home {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height: 80dvh;
+    justify-items: center;
+    width: 100%;
+
+    :where(.image, .main-content) {
+        align-items: flex-start;
+        display: flex;
+        height: 80%;
+        width: 80%;
+    }
+
+    .image {
+        @include filter(opacity(.9));
+        @include user-select(none);
+        background: url(../assets/profile.jpeg) center/contain no-repeat;
+        mask: url(../assets/ink-splash.svg) no-repeat center / 100%;
+        pointer-events: none;
+    }
+
+    .main-content {
+        strong {
+            font-family: $extra-bold;
+            font-size: 2.5em;
+
+            &::after {
+                @include animation(title-words 8000ms linear infinite);
+                color: $main-color;
+                content: "";
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+@include keyframes(title-words) {
+    0% {
+        content: "A";
+    }
+
+    20% {
+        content: "B";
+    }
+
+    40% {
+        content: "C";
+    }
+
+    60% {
+        content: "D";
+    }
+
+    80% {
+        content: "E";
+    }
+
+    100% {
+        content: "F";
+    }
+}
