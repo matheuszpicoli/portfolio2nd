@@ -13,7 +13,7 @@ export default function DropdownMenu(props: DropdownMenuProps): React.JSX.Elemen
 
     return (
         <div className="dropdown-menu" onMouseEnter={(): void => handleMouseEnter(props.menu)} onMouseLeave={(): void => setOpenMenu(null)}>
-            <span className="dropdown-title" style={openMenu !== null ? { color: "#6f16cf" } : undefined}>
+            <span className="dropdown-title" style={openMenu !== null ? { color: "#942648" } : undefined}>
                 {props.name}
             </span>
             {openMenu === props.menu && (

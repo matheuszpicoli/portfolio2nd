@@ -17,14 +17,15 @@ interface ThemeProviderProps {
 export function ThemeProvider(props: ThemeProviderProps) {
     const [theme, setTheme] = useState<Theme>(null)
 
-    useLayoutEffect(() => {
+    useLayoutEffect((): void => {
         if (typeof window !== "undefined") {
             const storedTheme = localStorage.getItem("theme") as Theme
 
             if (storedTheme) setTheme(storedTheme)
             else {
-                const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-                setTheme(prefersDarkScheme ? "dark" : "light")
+                const userPreferredTheme: Theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+
+                setTheme(userPreferredTheme)
             }
         }
     }, [])

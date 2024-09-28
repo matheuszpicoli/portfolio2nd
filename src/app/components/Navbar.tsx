@@ -38,8 +38,8 @@ export default function Navbar(): React.JSX.Element {
                     <ThemeButton />
                     <select name="languages" defaultValue={"Português"}>
                         <option value="Português">Português</option>
-                        <option value="Inglês">Inglês</option>
-                        <option value="Espanhol">Espanhol</option>
+                        <option value="Inglês">English</option>
+                        <option value="Espanhol">Español</option>
                     </select>
                 </div>
             </nav>

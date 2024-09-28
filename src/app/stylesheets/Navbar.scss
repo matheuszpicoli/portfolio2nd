@@ -40,8 +40,9 @@ header {
                 }
 
                 .submenu {
+                    @include animation(appear 200ms ease);
                     background-color: $dropdown-color;
-                    border-radius: 5px;
+                    border-radius: 2.5px;
                     border: 2.5px solid darken($dropdown-color, 50%);
                     display: flex;
                     flex-direction: column;
@@ -132,5 +133,17 @@ header {
                 }
             }
         }
+    }
+}
+
+@include keyframes(appear) {
+    from {
+        @include transform(translateY(3rem) scale(.95));
+        opacity: 0;
+    }
+
+    to {
+        @include transform(translateY(0) scale(1));
+        opacity: 1;
     }
 }

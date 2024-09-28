@@ -30,8 +30,9 @@ $medium: "RethinkSans Medium", sans-serif;
 $regular: "RethinkSans Regular", sans-serif;
 $semi-bold-italic: "RethinkSans Semi Bold Italic", sans-serif;
 $semi-bold: "RethinkSans Semi Bold", sans-serif;
-$main-color: #6f16cf;
+
 $dropdown-color: #cccccc20;
+$main-color: #942648;
 
 /// @group mixins ---------------------------------------------------------------------------------
 @mixin filter($filters...) {
@@ -143,6 +144,11 @@ body {
     margin: 0;
     padding: 0;
     text-rendering: optimizeLegibility;
+
+    &::selection {
+        background-color: $main-color;
+        color: var(--text-color);
+    }
 }
 
 @import "./Navbar.scss";

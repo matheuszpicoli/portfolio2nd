@@ -7,8 +7,6 @@
     width: 100%;
 
     :where(.image, .main-content) {
-        align-items: flex-start;
-        display: flex;
         height: 80%;
         width: 80%;
     }
@@ -22,42 +20,64 @@
     }
 
     .main-content {
-        strong {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1 {
+            @include user-select(none);
             font-family: $extra-bold;
             font-size: 2.5em;
 
             &::after {
-                @include animation(title-words 8000ms linear infinite);
+                @include animation(title-words 18000ms linear infinite);
                 color: $main-color;
                 content: "";
                 margin-left: 10px;
             }
+        }
+
+        p {
+            line-height: 23.5px;
+            margin-block: 5px;
+        }
+
+        &::after {
+            border-bottom: 5px solid $main-color;
+            content: "";
+            margin-top: 10px;
+            width: 10%;
         }
     }
 }
 
 @include keyframes(title-words) {
     0% {
-        content: "A";
+        content: "melhores.";
     }
 
-    20% {
-        content: "B";
+    16.67% {
+        content: "eficientes.";
     }
 
-    40% {
-        content: "C";
+    33.33% {
+        content: "atraentes.";
     }
 
-    60% {
-        content: "D";
+    50% {
+        content: "seguras.";
     }
 
-    80% {
-        content: "E";
+    66.67% {
+        content: "profissionais.";
+    }
+
+    83.33% {
+        content: "responsivas.";
     }
 
     100% {
-        content: "F";
+        content: "melhores.";
     }
 }
