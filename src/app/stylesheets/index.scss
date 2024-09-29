@@ -132,11 +132,16 @@ $main-color: #942648;
 }
 
 body {
+    @include transition(all 250ms ease-in-out);
     background-color: var(--bg-color);
     color: var(--text-color);
 }
 
 /// @group global-styles --------------------------------------------------------------------------
+:root {
+    font-size: 13px;
+}
+
 * {
     box-sizing: border-box;
     cursor: default;
@@ -151,5 +156,7 @@ body {
     }
 }
 
-@import "./Navbar.scss";
 @import "./Home.scss";
+@import "./Navbar.scss";
+
+@import "./pageTransitions.scss"

@@ -41,6 +41,11 @@
         p {
             line-height: 23.5px;
             margin-block: 5px;
+
+            > strong {
+                color: $main-color;
+                font-family: $bold;
+            }
         }
 
         &::after {

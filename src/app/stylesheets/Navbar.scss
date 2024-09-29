@@ -16,7 +16,12 @@ header {
         .logo {
             font-family: $medium;
             font-size: 1.3em;
-            pointer-events: none;
+
+            a {
+                color: inherit;
+                cursor: pointer;
+                text-decoration: none;
+            }
 
             span {
                 color: $main-color;
@@ -37,12 +42,22 @@ header {
 
                 .dropdown-title {
                     @include transition(color 300ms ease);
+                    padding: 5px;
+
+                    > svg {
+                        @include transition(transform 300ms ease);
+                        fill: $main-color;
+                        font-size: .85em;
+                        margin-inline: 5px;
+                        vertical-align: middle;
+                    }
                 }
 
                 .submenu {
                     @include animation(appear 200ms ease);
+                    @include filter(drop-shadow(0 0 10px rgba($main-color, 50%)));
                     background-color: $dropdown-color;
-                    border-radius: 2.5px;
+                    border-radius: 5px;
                     border: 2.5px solid darken($dropdown-color, 50%);
                     display: flex;
                     flex-direction: column;
@@ -53,7 +68,6 @@ header {
                     overflow-x: auto;
                     position: absolute;
                     top: 100%;
-                    z-index: 1;
 
                     &::-webkit-scrollbar {
                         width: 2.5px;
@@ -68,14 +82,40 @@ header {
                         border-radius: 2.5px;
                     }
 
-                    div {
-                        @include backdrop-fiter(brightness(0) blur(30px));
-                        cursor: pointer;
-                        font-size: .95em;
+                    > * {
+                        @include transition(all 250ms ease);
+                        background-color: var(--bg-color);
+                        border: 2.5px solid transparent;
+                        color: var(--text-color);
                         padding: 5px;
+                        text-decoration: none;
+
+                        span {
+                            color: inherit;
+                            cursor: pointer;
+                            display: flex;
+                            flex-direction: row;
+                            font-family: $medium;
+                            font-size: .95em;
+                            width: 100%;
+                        }
+
+                        :where(small, a) {
+                            color: inherit;
+                            cursor: pointer;
+                            display: block;
+                            font-size: .8em;
+                            opacity: .65;
+                            padding-block: 5px;
+                        }
 
                         &:hover {
-                            background-color: darken($dropdown-color, 50%);
+                            background-color: $main-color;
+                            border-color: $dropdown-color;
+                        }
+
+                        &:active {
+                            @include transform(scale(.98));
                         }
                     }
                 }

@@ -1,0 +1,6 @@
+.page-transition {
+    @include filter(blur(30px));
+    @include transform(translateY(40px));
+    background-color: var(--bg-color);
+    opacity: 0;
+}

@@ -1,39 +1,46 @@
+"use client"
 import React from "react"
-import ThemeButton from "./utils/ThemeButton"
+
+import DropdownItem from "./utils/DropdownItem"
 import DropdownMenu from "./utils/DropdownMenu"
+import ThemeButton from "./utils/ThemeButton"
+import TransitionLink from "./utils/TransitionLink"
 
 export default function Navbar(): React.JSX.Element {
+    const openLink = (link: string, target: "_self" | "_blank" = "_self"): Window | null => window?.open(link, target)
+
     return (
         <header>
             <nav className="navbar">
-                <div className="logo"><span>M</span>atheus <span>P</span>icoli</div>
+                <div className="logo">
+                    <TransitionLink href="/">
+                        <span>M</span>atheus <span>P</span>icoli
+                    </TransitionLink>
+                </div>
                 <div className="actions">
-                    <DropdownMenu name="Home" menu="home">
-                        {Array.from({ length: 3 }, (_: unknown, index: number): React.JSX.Element => {
-                            return (
-                                <div key={index}>
-                                    {`Item ${index + 1} de home`}
-                                </div>
-                            )
-                        })}
+                    <DropdownMenu name="Setup">
+                        <DropdownItem name="Apps">
+                            Aplicativos e serviços que utilizo para desenvolver.
+                        </DropdownItem>
                     </DropdownMenu>
-                    <DropdownMenu name="Projetos" menu="home">
-                        {Array.from({ length: 3 }, (_: unknown, index: number): React.JSX.Element => {
-                            return (
-                                <div key={index}>
-                                    {`Item ${index + 1} de projetos`}
-                                </div>
-                            )
-                        })}
+                    <DropdownMenu name="Projetos">
+                        <DropdownItem name="">
+                            Nada por enquanto
+                        </DropdownItem>
                     </DropdownMenu>
-                    <DropdownMenu name="Contato" menu="contato">
-                        {Array.from({ length: 3 }, (_: unknown, index: number): React.JSX.Element => {
-                            return (
-                                <div key={index}>
-                                    {`Item ${index + 1} de contato`}
-                                </div>
-                            )
-                        })}
+                    <DropdownMenu name="Contato">
+                        <DropdownItem name="Currículo">
+                            Clique aqui para visualizar meu currículo.
+                        </DropdownItem>
+                        <DropdownItem name="Email" onClick={() => openLink("mailto: matheuspicoli2011@gmail.com")}>
+                            Entre em contato comigo por email.
+                        </DropdownItem>
+                        <DropdownItem name="Github" onClick={(): Window | null => openLink("https://github.com/matheuszpicoli", "_blank")}>
+                            Veja meu Github.
+                        </DropdownItem>
+                        <DropdownItem name="LinkedIn" onClick={(): Window | null => openLink("https://www.linkedin.com/in/matheus-zpicoli", "_blank")}>
+                            Veja meu LinkedIn.
+                        </DropdownItem>
                     </DropdownMenu>
                     <ThemeButton />
                     <select name="languages" defaultValue={"Português"}>

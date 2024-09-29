@@ -40,8 +40,6 @@ export function ThemeProvider(props: ThemeProviderProps) {
     }
 
     useLayoutEffect((): void => {
-        document.body.style.transitionDuration = "250ms"
-
         document.body.classList.toggle("dark-theme", theme === "dark")
         document.body.classList.toggle("light-theme", theme === "light")
     }, [theme])

@@ -1,6 +1,7 @@
 import "@/app/stylesheets/index.scss"
 import { ThemeProvider } from "@/app/hooks/contexts/themeContext"
 import type { Metadata } from "next"
+import Navbar from "@/app/components/Navbar"
 
 export const metadata: Metadata = {
     title: "Matheus Picoli | Portfólio"
@@ -15,6 +16,7 @@ export default function RootLayout(props: Readonly<RootLayoutProps>) {
         <ThemeProvider>
             <html lang="pt-br">
                 <body>
+                    <Navbar />
                     {props.children}
                 </body>
             </html>
