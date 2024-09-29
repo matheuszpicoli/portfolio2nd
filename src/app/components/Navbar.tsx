@@ -19,9 +19,11 @@ export default function Navbar(): React.JSX.Element {
                 </div>
                 <div className="actions">
                     <DropdownMenu name="Setup">
-                        <DropdownItem name="Apps">
-                            Aplicativos e serviços que utilizo para desenvolver.
-                        </DropdownItem>
+                        <TransitionLink href="/apps">
+                            <DropdownItem name="Apps">
+                                Aplicativos e serviços que utilizo para desenvolver.
+                            </DropdownItem>
+                        </TransitionLink>
                     </DropdownMenu>
                     <DropdownMenu name="Projetos">
                         <DropdownItem name="">
