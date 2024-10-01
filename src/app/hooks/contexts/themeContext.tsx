@@ -1,4 +1,5 @@
 "use client"
+
 import React, { createContext, useContext, useLayoutEffect, useState } from "react"
 
 type Theme = "light" | "dark" | null
@@ -14,7 +15,7 @@ interface ThemeProviderProps {
     children: React.ReactNode
 }
 
-export function ThemeProvider(props: ThemeProviderProps) {
+export function ThemeProvider(props: ThemeProviderProps): React.JSX.Element {
     const [theme, setTheme] = useState<Theme>(null)
 
     useLayoutEffect((): void => {
@@ -35,6 +36,7 @@ export function ThemeProvider(props: ThemeProviderProps) {
             const newTheme: Theme = prev === "light" ? "dark" : "light"
 
             if (typeof window !== "undefined") localStorage.setItem("theme", newTheme)
+
             return newTheme
         })
     }

@@ -1,15 +1,15 @@
 "use client"
-import { useLayoutEffect, useState } from "react"
+
+import React, { useLayoutEffect, useState } from "react"
+
 import * as Icon from "@/app/assets/icons"
 
-export default function ScrollToTopButton() {
+export default function ScrollToTopButton(): React.JSX.Element {
     const [isVisible, setIsVisible] = useState<boolean>(false)
 
     const handleScroll = (): void => window.scrollY >= 30
         ? setIsVisible(true)
         : setIsVisible(false)
-
-    const scrollToTop = (): void => window.scrollTo({ top: 0, behavior: "smooth" })
 
     useLayoutEffect(() => {
         window.addEventListener("scroll", handleScroll)
@@ -18,10 +18,12 @@ export default function ScrollToTopButton() {
     }, [])
 
     return (
-        isVisible && (
-            <button className="scroll-to-top-button" onClick={scrollToTop}>
-                Voltar ao Topo<Icon.Up />
-            </button>
-        )
+        <React.Fragment>
+            {isVisible && (
+                <button className="scroll-to-top-button" onClick={(): void => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                    Voltar ao Topo<Icon.Up />
+                </button>
+            )}
+        </React.Fragment>
     )
 }

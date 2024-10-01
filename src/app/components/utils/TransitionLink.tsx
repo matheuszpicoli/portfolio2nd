@@ -1,5 +1,7 @@
 "use client"
+
 import React from "react"
+
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 
@@ -8,7 +10,7 @@ interface TransitionLinkProps {
     href: string
 }
 
-const sleep = (ms: number): Promise<void> => new Promise((resolve: (value: void | PromiseLike<void>) => void) => setTimeout(resolve, ms))
+const sleep = (time: number): Promise<void> => new Promise<void>((resolve) => setTimeout(resolve, time))
 
 export default function TransitionLink(props: TransitionLinkProps): React.JSX.Element {
     const router = useRouter()
