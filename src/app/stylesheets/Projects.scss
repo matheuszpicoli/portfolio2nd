@@ -24,9 +24,53 @@ $technologies-colors: (
     > .viewer {
         display: flex;
         flex-direction: row;
-        gap: 2em;
+        overflow: hidden;
         padding: 2em;
+        position: relative;
         width: 100%;
+
+        .swiper {
+            width: 100%;
+            padding: 2em;
+
+            :where(.swiper-button-prev, .swiper-button-next) {
+                @include transform(scale(.5));
+                @include transition(all 250ms ease);
+                color: $main-color;
+
+                &:hover {
+                    opacity: .5;
+                }
+
+                &:active {
+                    @include transform(scale(.45));
+                    opacity: 1;
+                }
+            }
+
+            .swiper-pagination {
+                border-top: 2px solid var(--opacity-color);
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                padding: 1em;
+
+                .swiper-pagination-bullet {
+                    background-color: var(--text-color);
+                    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #00000050);
+
+                    &.swiper-pagination-bullet-active {
+                        background-color: $main-color;
+                    }
+                }
+            }
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: space-between;
+            padding: 2em;
+        }
 
         .project {
             @include user-select(none);
@@ -46,6 +90,7 @@ $technologies-colors: (
         .description {
             display: flex;
             flex-direction: column;
+            margin-left: 2em;
             width: 60%;
 
             h3 {

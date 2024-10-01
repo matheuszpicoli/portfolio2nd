@@ -194,6 +194,7 @@ body {
     padding: 10px;
     position: fixed;
     right: 20px;
+    z-index: 10;
 
     > svg {
         cursor: pointer;
