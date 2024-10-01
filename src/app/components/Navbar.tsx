@@ -1,4 +1,5 @@
 "use client"
+
 import React from "react"
 
 import DropdownItem from "./utils/DropdownItem"
@@ -7,7 +8,7 @@ import ThemeButton from "./utils/ThemeButton"
 import TransitionLink from "./utils/TransitionLink"
 
 export default function Navbar(): React.JSX.Element {
-    const openLink = (link: string, target: "_self" | "_blank" = "_self"): Window | null => window?.open(link, target)
+    const openLink = (link: string, target: "_self" | "_blank" = "_self"): Window | null => window?.open(link, target, "noopener noreferrer")
 
     return (
         <header>
@@ -21,7 +22,12 @@ export default function Navbar(): React.JSX.Element {
                     <DropdownMenu name="Setup">
                         <TransitionLink href="/apps">
                             <DropdownItem name="Apps">
-                                Aplicativos e serviços que utilizo para desenvolver.
+                                Aplicativos e serviços que utilizo no meu dia a dia.
+                            </DropdownItem>
+                        </TransitionLink>
+                        <TransitionLink href="/equipment">
+                            <DropdownItem name="Equipamentos">
+                                Equipamentos que uso e aprovo.
                             </DropdownItem>
                         </TransitionLink>
                     </DropdownMenu>
@@ -32,16 +38,16 @@ export default function Navbar(): React.JSX.Element {
                     </DropdownMenu>
                     <DropdownMenu name="Contato">
                         <DropdownItem name="Currículo">
-                            Clique aqui para visualizar meu currículo.
+                            Clique aqui para visualizar meu currículo em PDF.
                         </DropdownItem>
                         <DropdownItem name="Email" onClick={() => openLink("mailto: matheuspicoli2011@gmail.com")}>
                             Entre em contato comigo por email.
                         </DropdownItem>
                         <DropdownItem name="Github" onClick={(): Window | null => openLink("https://github.com/matheuszpicoli", "_blank")}>
-                            Veja meu Github.
+                            Acesse meu Github.
                         </DropdownItem>
                         <DropdownItem name="LinkedIn" onClick={(): Window | null => openLink("https://www.linkedin.com/in/matheus-zpicoli", "_blank")}>
-                            Veja meu LinkedIn.
+                            Acesse meu LinkedIn.
                         </DropdownItem>
                     </DropdownMenu>
                     <ThemeButton />

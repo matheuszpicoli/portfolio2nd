@@ -2,6 +2,7 @@ header {
     @include sticky;
     top: 0;
     height: max-content;
+    z-index: 10;
 
     .navbar {
         @include backdrop-fiter(blur(30px));
@@ -68,6 +69,7 @@ header {
                     overflow-x: auto;
                     position: absolute;
                     top: 100%;
+                    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #00000050);
 
                     &::-webkit-scrollbar {
                         width: 2.5px;
@@ -107,6 +109,10 @@ header {
                             font-size: .8em;
                             opacity: .65;
                             padding-block: 5px;
+
+                            > * {
+                                all: unset;
+                            }
                         }
 
                         &:hover {

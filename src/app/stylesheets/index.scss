@@ -120,6 +120,18 @@ $main-color: #942648;
     user-select: $user-select;
 }
 
+@mixin title {
+    font-family: $extra-bold;
+    font-size: 2em;
+    letter-spacing: .5px;
+}
+
+@mixin subtitle {
+    font-family: $bold;
+    font-size: 1.5em;
+    letter-spacing: .5px;
+}
+
 /// @group themes ---------------------------------------------------------------------------------
 .light-theme {
     --bg-color: #bababa;
@@ -158,8 +170,59 @@ body {
     }
 }
 
-@import "./Apps.scss";
+.page-transition {
+    @include filter(blur(30px));
+    @include transform(translateY(40px));
+    background-color: var(--bg-color);
+    opacity: 0;
+}
+
+.scroll-to-top-button {
+    @include animation(show-button 500ms ease);
+    @include transition(all 250ms ease);
+    @include user-select(none);
+    align-items: center;
+    background-color: transparent;
+    border-radius: 5px;
+    border: none;
+    bottom: 20px;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    opacity: .45;
+    padding: 10px;
+    position: fixed;
+    right: 20px;
+
+    > svg {
+        cursor: pointer;
+        fill: $main-color;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:active {
+        @include transform(scale(.95));
+    }
+}
+
+/// @group imports --------------------------------------------------------------------------------
+@import "./AppsAndEquipments.scss";
 @import "./Home.scss";
 @import "./Navbar.scss";
+@import "./Projects.scss";
 
-@import "./pageTransitions.scss"
+@include keyframes(show-button) {
+    from {
+        @include transform(scale(0) rotate(2turn));
+    }
+
+    to {
+        @include transform(scale(1) rotate(0));
+    }
+}

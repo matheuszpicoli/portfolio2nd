@@ -1,0 +1,119 @@
+$technologies-colors: (
+    "css": #3a66eb,
+    "gulp": #dd4748,
+    "html": #e36122,
+    "javascript": #eed534,
+    "scss": #c36595
+);
+
+@function technology-color($technology) {
+    @return map-get($technologies-colors, $technology);
+}
+
+.projects {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+        @include title;
+        margin-block: 1em;
+    }
+
+    > .viewer {
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+        padding: 2em;
+        width: 100%;
+
+        .project {
+            @include user-select(none);
+            border-radius: 5px;
+            height: max-content;
+            overflow: hidden;
+            position: relative;
+            width: 40%;
+            -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #00000050);
+
+            .video {
+                pointer-events: none;
+                width: 100%;
+            }
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+
+            h3 {
+                @include subtitle;
+                margin-bottom: 1em;
+            }
+
+            p {
+                flex: 1;
+                line-height: 23.5px;
+                margin-block: 5px;
+            }
+
+            .technologies {
+                align-items: center;
+                display: flex;
+                gap: 5px;
+                margin-block: 1em;
+
+                svg {
+                    @include filter(drop-shadow(0 0 5px #00000050));
+                    @include transition(transform 150ms ease);
+                    font-size: 2.5em;
+
+                    @each $technology in map-keys($technologies-colors) {
+                        &[aria-label="#{$technology}"] {
+                            color: technology-color($technology);
+                        }
+                    }
+
+                    &:hover {
+                        @include transform(scale(.75));
+                    }
+                }
+            }
+
+            .actions {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+
+                button[type="button"] {
+                    @include transition(transform 150ms ease);
+                    background-color: var(--opacity-color);
+                    border-radius: 10px;
+                    border: none;
+                    color: var(--text-color);
+                    cursor: pointer;
+                    font-family: $medium;
+                    font-size: calc(1rem + 1.5px);
+                    padding: 10px;
+                    position: relative;
+
+                    > svg {
+                        display: inline-block;
+                        margin-right: 5px;
+                        vertical-align: middle;
+                    }
+
+                    &:hover {
+                        @include transform(scale(.95));
+                    }
+
+                    &:active {
+                        @include transform(scale(1));
+                    }
+                }
+            }
+        }
+    }
+}

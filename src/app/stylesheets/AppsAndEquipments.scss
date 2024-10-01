@@ -1,0 +1,102 @@
+$app-colors: (
+    "anydesk": #fc4236,
+    "canva": #0bb7ce,
+    "chat-gpt": #242424,
+    "dbeaver": #997f6c,
+    "github-desktop": #782f9e,
+    "obs-studio": #0e0b0e,
+    "onenote": #ca64ea,
+    "postman": #ff6c37,
+    "powershell": #4d87ed,
+    "área-de-trabalho-remota": #c7390a,
+    "spotify": #1ed760,
+    "virtual-box": #21416b,
+    "visual-studio-code": #219ede
+);
+
+@function app-color($app) {
+    @return map-get($app-colors, $app);
+}
+
+:is(.apps, .equipments) {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-inline: 2em;
+
+    h1 {
+        @include title;
+    }
+
+    p {
+        line-height: 23.5px;
+        margin-block: 5px;
+    }
+
+    .cards {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+        .card {
+            @include linear-gradient(to top, transparent, var(--opacity-color));
+            @include transition(all 200ms ease);
+            align-items: center;
+            border-radius: 5px;
+            border: 1.5px solid var(--opacity-color);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+
+            .card-header {
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                width: 100%;
+
+                figure {
+                    margin: 0;
+                    padding: 0;
+
+                    svg {
+                        font-size: 2.5em;
+
+                        @each $app in map-keys($app-colors) {
+                            &[aria-label="#{$app}"] {
+                                color: app-color($app);
+                            }
+                        }
+                    }
+
+                    img {
+                        @include user-select(none);
+                        height: 20dvh;
+                        object-fit: cover;
+                        pointer-events: none;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .card-body {
+                margin-block: 5px;
+
+                strong {
+                    color: $main-color;
+                }
+            }
+
+            .card-footer {
+                p {
+                    font-size: .9em;
+                    opacity: .65;
+                }
+            }
+
+            &:hover {
+                @include transform(scale(.9));
+            }
+        }
+    }
+}

@@ -1,23 +1,30 @@
 import React from "react"
-import { IconType } from "react-icons"
+
+import type { IconType } from "react-icons"
+import type { StaticImageData } from "next/image"
+import Image from "next/image"
 
 interface CardProps {
-    icon: IconType
+    icon?: IconType
+    image?: StaticImageData
     content: string
-    description: string
+    category: string
 }
 
 export default function Card(props: CardProps): React.JSX.Element {
     return (
         <div className="card">
             <div className="card-header">
-                <props.icon aria-label={props.content.toLowerCase().replaceAll(" ", "-")} />
+                <figure>
+                    {props.icon && <props.icon aria-label={props.content.toLowerCase().replaceAll(" ", "-")} />}
+                    {props.image && <Image src={props.image} alt={props.content} />}
+                </figure>
             </div>
             <div className="card-body">
                 <strong>{props.content}</strong>
             </div>
             <div className="card-footer">
-                <p>{props.description}</p>
+                <p>{props.category}</p>
             </div>
         </div>
     )
