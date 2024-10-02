@@ -3,7 +3,13 @@ $technologies-colors: (
     "gulp": #dd4748,
     "html": #e36122,
     "javascript": #eed534,
-    "scss": #c36595
+    "json": #eed534,
+    "next": #fbfbfb,
+    "node": #81b801,
+    "react": #6dcce4,
+    "scss": #c36595,
+    "tailwind": #50b9f2,
+    "typescript": #2f5fa1
 );
 
 @function technology-color($technology) {
@@ -19,6 +25,10 @@ $technologies-colors: (
     h2 {
         @include title;
         margin-block: 1em;
+    }
+
+    p {
+        line-height: 23.5px;
     }
 
     > .viewer {
@@ -88,6 +98,7 @@ $technologies-colors: (
         }
 
         .description {
+            @include user-select(none);
             display: flex;
             flex-direction: column;
             margin-left: 2em;
