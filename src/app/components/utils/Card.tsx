@@ -18,7 +18,7 @@ export default function Card(props: CardProps): React.JSX.Element {
             <div className="card-header">
                 <figure>
                     {props.icon && <props.icon aria-label={props.content.toLowerCase().replaceAll(" ", "-")} />}
-                    {props.image && <Image src={props.image} alt={props.content} />}
+                    {props.image && <Image src={props.image} alt={props.content} priority={false} />}
                 </figure>
             </div>
             <div className="card-body">

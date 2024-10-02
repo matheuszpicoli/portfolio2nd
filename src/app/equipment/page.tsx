@@ -18,7 +18,7 @@ export default function Equipment(): React.JSX.Element {
                 <Card image={Deskpad} content="Deskpad RGB Exbom" category="Periférico" />
                 <Card image={Headset} content="Headset Multilaser Warrior Rama" category="Áudio" />
                 <Card image={Keyboard} content="Machenike K500 B94" category="Periférico" />
-                <Card image={Laptop} content="Dell Inspiron 13 5330 i7 1360P" category="Principal" />
+                <Card image={Laptop} content="Dell Inspiron 13 5330 i7 1360P" category="Notebook" />
                 <Card image={Mouse} content="Redragon Griffin" category="Periférico" />
                 <Card image={Projector} content="Projetor Astronauta" category="Iluminação" />
             </article>

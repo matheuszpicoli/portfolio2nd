@@ -134,20 +134,22 @@ $technologies-colors: (
 
                 button[type="button"] {
                     @include transition(transform 150ms ease);
+                    align-items: center;
                     background-color: var(--opacity-color);
                     border-radius: 10px;
                     border: none;
                     color: var(--text-color);
                     cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
                     font-family: $medium;
                     font-size: calc(1rem + 1.5px);
+                    gap: 5px;
                     padding: 10px;
                     position: relative;
 
                     > svg {
-                        display: inline-block;
-                        margin-right: 5px;
-                        vertical-align: middle;
+                        cursor: pointer;
                     }
 
                     &:hover {
