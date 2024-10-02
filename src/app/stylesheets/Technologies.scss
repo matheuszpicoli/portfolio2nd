@@ -1,0 +1,71 @@
+.technologies-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+        @include title;
+        margin-block: 1em;
+    }
+
+    p {
+        line-height: 23.5px;
+        margin-block: 5px;
+    }
+
+    .technologies-table {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 2em;
+        width: 100%;
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 1em;
+
+            .category {
+                color: $main-color;
+                font-family: $bold;
+                text-align: right;
+            }
+
+            :where(th, td) {
+                border: 1px solid var(--opacity-color);
+                padding: 10px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #0000001a;
+                color: $main-color;
+                font-family: $bold;
+                pointer-events: none;
+            }
+
+            tr {
+                &:nth-child(even) {
+                    background-color: #0000000d;
+                }
+
+                &:hover {
+                    background-color: #0000001a;
+                }
+            }
+
+            td {
+                font-size: 1em;
+            }
+
+            .total {
+                text-align: right;
+                font-family: $bold;
+
+                &.global {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}

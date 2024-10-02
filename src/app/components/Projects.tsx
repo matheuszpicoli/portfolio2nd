@@ -116,7 +116,7 @@ export default function Projects(): React.JSX.Element {
     ]
 
     return (
-        <section className="projects">
+        <section className="projects-section">
             <h2>Projetos</h2>
             <p>Todos os projetos aqui mostrados são projetos pessoais desenvolvidos por mim, <dfn>MP</dfn> antes de cada título significa o meu nome.</p>
             <p>Não são muitos por conta do meu trabalho, mas estou sempre desenvolvendo ou estudando algo.</p>

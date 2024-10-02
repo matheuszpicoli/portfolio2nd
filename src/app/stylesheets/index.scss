@@ -121,6 +121,7 @@ $main-color: #942648;
 }
 
 @mixin title {
+    color: $main-color;
     font-family: $extra-bold;
     font-size: 2em;
     letter-spacing: .5px;
@@ -217,6 +218,7 @@ body {
 @import "./Home.scss";
 @import "./Navbar.scss";
 @import "./Projects.scss";
+@import "./Technologies.scss";
 
 @include keyframes(show-button) {
     from {
