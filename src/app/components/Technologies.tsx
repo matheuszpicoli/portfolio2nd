@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import * as Icon from "@/app/assets/icons";
+import * as Icon from "@/app/assets/icons"
 
 type Technologies = {
     category: "Front-end" | "Back-end" | "Banco de dados" | "Outras tecnologias" | "Ferramentas" | "DevOps"

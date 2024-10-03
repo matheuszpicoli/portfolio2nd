@@ -7,7 +7,7 @@ import DropdownMenu from "./utils/DropdownMenu"
 import ThemeButton from "./utils/ThemeButton"
 import TransitionLink from "./utils/TransitionLink"
 
-type Anchor = "projects" | "technologies"
+type Anchor = "projects" | "technologies" | "contact"
 
 export default function Navbar(): React.JSX.Element {
     const openLink = (link: string, target: "_self" | "_blank" = "_self"): Window | null => window?.open(link, target, "noopener noreferrer")
@@ -45,6 +45,7 @@ export default function Navbar(): React.JSX.Element {
                             </DropdownItem>
                         </TransitionLink>
                     </DropdownMenu>
+
                     <DropdownMenu name="Projetos">
                         <DropdownItem name="Meus projetos" onClick={(): void => navigateToAnchor("projects")}>
                             Veja aqui os meus projetos mais recentes.
@@ -52,10 +53,11 @@ export default function Navbar(): React.JSX.Element {
                         <DropdownItem name="Skills" onClick={(): void => navigateToAnchor("technologies")}>
                             Tecnologias que utilizo em meus projetos e que venho trabalhando nos últimos tempos.
                         </DropdownItem>
-                        <DropdownItem name="Ficou interessado?">
+                        <DropdownItem name="Ficou interessado?" onClick={(): void => navigateToAnchor("contact")}>
                             Compartilhe a sua ideia aqui, não leva nem 2 minutos.
                         </DropdownItem>
                     </DropdownMenu>
+
                     <DropdownMenu name="Contato">
                         <DropdownItem name="Currículo">
                             Clique aqui para visualizar meu currículo em PDF.
@@ -70,7 +72,9 @@ export default function Navbar(): React.JSX.Element {
                             Acesse meu LinkedIn.
                         </DropdownItem>
                     </DropdownMenu>
+
                     <ThemeButton />
+
                     <select name="languages" defaultValue={"pt-br"}>
                         <option value="pt-br">Português</option>
                         <option value="en-us">English</option>

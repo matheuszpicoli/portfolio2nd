@@ -133,6 +133,35 @@ $main-color: #942648;
     letter-spacing: .5px;
 }
 
+@mixin button {
+    @include linear-gradient(to bottom, transparent, var(--opacity-color));
+    @include transition(transform 150ms ease);
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    font-family: $medium;
+    font-size: calc(1rem + 1.5px);
+    gap: 5px;
+    padding: 10px;
+    position: relative;
+
+    > svg {
+        cursor: pointer;
+    }
+
+    &:hover {
+        @include transform(scale(.95));
+    }
+
+    &:active {
+        @include transform(scale(1));
+    }
+}
+
 /// @group themes ---------------------------------------------------------------------------------
 .light-theme {
     --bg-color: #bababa;
@@ -216,6 +245,7 @@ body {
 /// @group imports --------------------------------------------------------------------------------
 @import "./AppsAndEquipments.scss";
 @import "./Home.scss";
+@import "./Contact.scss";
 @import "./Navbar.scss";
 @import "./Projects.scss";
 @import "./Technologies.scss";
