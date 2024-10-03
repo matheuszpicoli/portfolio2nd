@@ -1,125 +1,127 @@
 import React from "react";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaDatabase, FaGit, FaTools, FaCloud } from "react-icons/fa";
-import { SiTypescript, SiBootstrap, SiTailwindcss, SiExpress, SiFlask, SiFirebase, SiMysql, SiMongodb, SiGithub, SiWebpack, SiVite, SiNodemon, SiPandas, SiPostman, SiGrafana, SiVisualstudio, SiVercel } from "react-icons/si";
 
-type Technology = {
-    category: string;
-    techs: Array<{ name: string; icon: React.JSX.Element; }>
+import * as Icon from "@/app/assets/icons";
+
+type Technologies = {
+    category: "Front-end" | "Back-end" | "Banco de dados" | "Outras tecnologias" | "Ferramentas" | "DevOps"
+    items: Array<{ name: string; icon: React.JSX.Element }>
 }
 
-export default function Technologies(): React.JSX.Element {
-    const technologies: Array<Technology> = [
-        {
-            category: "Front-end",
-            techs: [
-                { name: "HTML", icon: <FaHtml5 /> },
-                { name: "CSS", icon: <FaCss3Alt /> },
-                { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-                { name: "SCSS", icon: <SiBootstrap /> },
-                { name: "JavaScript", icon: <FaJs /> },
-                { name: "TypeScript", icon: <SiTypescript /> },
-                { name: "React", icon: <FaReact /> },
-                { name: "Next", icon: <FaReact /> },
-                { name: "jQuery", icon: <FaJs /> },
-                { name: "Bootstrap", icon: <SiBootstrap /> },
-                { name: "Babel", icon: <FaTools /> },
-                { name: "Gulp", icon: <FaTools /> }
-            ]
-        },
-        {
-            category: "Back-end",
-            techs: [
-                { name: "Node", icon: <FaNodeJs /> },
-                { name: "Express", icon: <SiExpress /> },
-                { name: "Flask", icon: <SiFlask /> },
-                { name: "Firebase", icon: <SiFirebase /> },
-                { name: "Python", icon: <FaPython /> },
-                { name: "Delphi", icon: <FaTools /> },
-                { name: "SQL Alchemy", icon: <FaDatabase /> },
-                { name: "Axios", icon: <FaTools /> },
-                { name: "Shell", icon: <FaTools /> }
-            ]
-        },
-        {
-            category: "Banco de dados",
-            techs: [
-                { name: "MongoDB", icon: <SiMongodb /> },
-                { name: "MySQL", icon: <SiMysql /> },
-                { name: "MariaDB", icon: <SiMysql /> },
-                { name: "Oracle", icon: <FaDatabase /> }
-            ]
-        },
-        {
-            category: "Outras tecnologias",
-            techs: [
-                { name: "Git", icon: <FaGit /> },
-                { name: "GitHub", icon: <SiGithub /> },
-                { name: "ESLint", icon: <FaTools /> },
-                { name: "Webpack", icon: <SiWebpack /> },
-                { name: "Vite", icon: <SiVite /> },
-                { name: "Nodemon", icon: <SiNodemon /> },
-                { name: "Plotly", icon: <FaTools /> },
-                { name: "Pandas", icon: <SiPandas /> },
-                { name: "Markdown", icon: <FaTools /> }
-            ]
-        },
-        {
-            category: "Ferramentas",
-            techs: [
-                { name: "Postman", icon: <SiPostman /> },
-                { name: "Grafana", icon: <SiGrafana /> },
-                { name: "VS Code", icon: <SiVisualstudio /> },
-                { name: "SQL Server Management Studio", icon: <FaTools /> },
-                { name: "DBeaver", icon: <FaTools /> },
-                { name: "MySQL Workbench", icon: <SiMysql /> },
-                { name: "Bash", icon: <FaTools /> },
-                { name: "Vercel", icon: <SiVercel /> }
-            ]
-        },
-        {
-            category: "DevOps",
-            techs: [
-                { name: "Azure", icon: <FaCloud /> },
-                { name: "Amazon Web Services (AWS)", icon: <FaCloud /> }
-            ]
-        }
-    ]
+const technologies: Array<Technologies> = [
+    {
+        category: "Front-end",
+        items: [
+            { name: "Babel", icon: <Icon.Babel aria-label="babel" /> },
+            { name: "Bootstrap", icon: <Icon.Bootstrap aria-label="bootstrap" /> },
+            { name: "CSS", icon: <Icon.Css aria-label="css" /> },
+            { name: "Gulp", icon: <Icon.Gulp aria-label="gulp" /> },
+            { name: "HTML", icon: <Icon.Html aria-label="html" /> },
+            { name: "JavaScript", icon: <Icon.JavaScript aria-label="javascript" /> },
+            { name: "jQuery", icon: <Icon.Jquery aria-label="jquery" /> },
+            { name: "Next", icon: <Icon.Next aria-label="next" /> },
+            { name: "React", icon: <Icon.React aria-label="react" /> },
+            { name: "SCSS", icon: <Icon.Scss aria-label="scss" /> },
+            { name: "Tailwind", icon: <Icon.Tailwind aria-label="tailwind" /> },
+            { name: "TypeScript", icon: <Icon.TypeScript aria-label="typescript" /> }
+        ]
+    },
+    {
+        category: "Back-end",
+        items: [
+            { name: "Axios", icon: <Icon.Axios aria-label="axios" /> },
+            { name: "Delphi", icon: <Icon.Delphi aria-label="delphi" /> },
+            { name: "Express", icon: <Icon.Express aria-label="express" /> },
+            { name: "Firebase", icon: <Icon.Firebase aria-label="firebase" /> },
+            { name: "Flask", icon: <Icon.Flask aria-label="flask" /> },
+            { name: "Node", icon: <Icon.Node aria-label="node" /> },
+            { name: "Python", icon: <Icon.Python aria-label="python" /> },
+            { name: "Shell", icon: <Icon.Shell aria-label="shell" /> },
+            { name: "SQLAlchemy", icon: <Icon.SQLAlchemy aria-label="sqlalchemy" /> }
+        ]
+    },
+    {
+        category: "Banco de dados",
+        items: [
+            { name: "MariaDB", icon: <Icon.MariaDB aria-label="mariadb" /> },
+            { name: "MongoDB", icon: <Icon.MongoDB aria-label="mongodb" /> },
+            { name: "MySQL", icon: <Icon.MySQL aria-label="mysql" /> },
+            { name: "Oracle", icon: <Icon.Oracle aria-label="oracle" /> },
+            { name: "SQL Server", icon: <Icon.SQLServer aria-label="sql-server" /> }
+        ]
+    },
+    {
+        category: "Outras tecnologias",
+        items: [
+            { name: "ESLint", icon: <Icon.ESLint aria-label="eslint" /> },
+            { name: "Git", icon: <Icon.Git aria-label="git" /> },
+            { name: "GitHub", icon: <Icon.Github aria-label="github" /> },
+            { name: "Markdown", icon: <Icon.Markdown aria-label="markdown" /> },
+            { name: "Nodemon", icon: <Icon.Nodemon aria-label="nodemon" /> },
+            { name: "Pandas", icon: <Icon.Pandas aria-label="pandas" /> },
+            { name: "Plotly Express", icon: <Icon.Plotly aria-label="plotly" /> },
+            { name: "Vite", icon: <Icon.Vite aria-label="vite" /> },
+            { name: "Webpack", icon: <Icon.Webpack aria-label="webpack" /> }
+        ]
+    },
+    {
+        category: "Ferramentas",
+        items: [
+            { name: "Bash", icon: <Icon.Bash aria-label="bash" /> },
+            { name: "DBeaver", icon: <Icon.Dbeaver aria-label="dbeaver" /> },
+            { name: "Grafana", icon: <Icon.Grafana aria-label="grafana" /> },
+            { name: "Postman", icon: <Icon.Postman aria-label="postman" /> },
+            { name: "Vercel", icon: <Icon.Vercel aria-label="vercel" /> },
+            { name: "VSCode", icon: <Icon.VSCode aria-label="vscode" /> }
+        ]
+    },
+    {
+        category: "DevOps",
+        items: [
+            { name: "AWS", icon: <Icon.Aws aria-label="aws" /> },
+            { name: "Azure", icon: <Icon.Azure aria-label="azure" /> }
+        ]
+    }
+]
 
+export default function Technologies(): React.JSX.Element {
     return (
-        <section className="technologies-section">
+        <section className="technologies-section" id="technologies">
             <h2>Tecnologias</h2>
-            <p>Todas as tecnologias que tenho experiência, categorizadas.</p>
-            <div className="technologies-table">
-                <table>
+            <p>Todas as tecnologias e ferramentas que tenho experiência e já trabalhei &#40;por categoria&#41;.</p>
+            <div>
+                <table className="technologies-table">
                     <thead>
                         <tr>
                             <th>Categoria</th>
-                            <th colSpan={2}>Tecnologia</th>
+                            <th>Tecnologia</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {technologies.map((category: Technology): React.JSX.Element => (
-                            <React.Fragment>
-                                {category.techs.map(({ name, icon }, index: number): React.JSX.Element => (
-                                    <tr key={`${category.category}-${index}`}>
-                                        {index === 0 && <td className="category" rowSpan={category.techs.length}>{category.category}</td>}
-                                        <td>{name}</td>
-                                        <td>{icon}</td>
-                                    </tr>
-                                ))}
+                        {technologies.map((technologies: Technologies, index: number): React.JSX.Element => (
+                            <React.Fragment key={index}>
                                 <tr>
-                                    <td colSpan={2} className="total">Total</td>
-                                    <td>{category.techs.length}</td>
+                                    <td className="category" rowSpan={2}>
+                                        {technologies.category}
+                                    </td>
+                                    <td className="items">
+                                        <div>
+                                            {technologies.items.map(({ name, icon }, index: number): React.JSX.Element => (
+                                                <figure key={index}>
+                                                    {icon}
+                                                    <figcaption>{name}</figcaption>
+                                                </figure>
+                                            ))}
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={2} className="total">
+                                        {technologies.items.length}
+                                    </td>
                                 </tr>
                             </React.Fragment>
                         ))}
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colSpan={2} className="total global">Total Geral</td>
-                            <td>{technologies.reduce((sum: number, category: Technology): number => sum + category.techs.length, 0)}</td>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
         </section>

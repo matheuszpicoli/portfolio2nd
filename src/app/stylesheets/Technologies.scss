@@ -1,3 +1,53 @@
+$technologies-colors: (
+    "aws": #f19301,
+    "axios": #5a2fe0,
+    "azure": #4bace5,
+    "babel": #f0d534,
+    "bash": #f8f8f8,
+    "bootstrap": #721ff1,
+    "css": #3a66ec,
+    "dbeaver": #9a806d,
+    "delphi": #a5060e,
+    "eslint": #807fec,
+    "express": null,
+    "firebase": #f3c418,
+    "flask": null,
+    "git": #e24c2f,
+    "github": null,
+    "grafana": #eaa301,
+    "gulp": #e34849,
+    "html": #e36122,
+    "javascript": #efd433,
+    "jquery": #2771b0,
+    "mariadb": #bd9669,
+    "markdown": null,
+    "mongodb": #57a63d,
+    "mysql": #4a779e,
+    "next": #fbfbfb,
+    "node": #81b801,
+    "nodemon": #7bca46,
+    "oracle": #bc4430,
+    "pandas": #150a55,
+    "plotly": #3b9fff,
+    "postman": #f06832,
+    "python": #4174a4,
+    "react": #73dbfc,
+    "scss": #c36595,
+    "shell": #4e88ef,
+    "sqlalchemy": #c32323,
+    "sql-server": #de2e27,
+    "tailwind": #3ab2d0,
+    "typescript": #3e76c2,
+    "vercel": null,
+    "vite": #9c59f8,
+    "vscode": #219de1,
+    "webpack": #93d1f5
+);
+
+@function technology-color($technology) {
+    @return map-get($technologies-colors, $technology);
+}
+
 .technologies-section {
     align-items: center;
     display: flex;
@@ -14,56 +64,88 @@
         margin-block: 5px;
     }
 
-    .technologies-table {
+    > div {
+        align-items: center;
         display: flex;
         flex-direction: column;
-        padding-inline: 2em;
-        width: 100%;
+        justify-content: center;
 
-        table {
+        .technologies-table {
             border-collapse: collapse;
-            width: 100%;
-            margin-top: 1em;
-
-            .category {
-                color: $main-color;
-                font-family: $bold;
-                text-align: right;
-            }
-
-            :where(th, td) {
-                border: 1px solid var(--opacity-color);
-                padding: 10px;
-                text-align: left;
-            }
-
-            th {
-                background-color: #0000001a;
-                color: $main-color;
-                font-family: $bold;
-                pointer-events: none;
-            }
+            margin-block: 2em;
+            width: 80%;
 
             tr {
-                &:nth-child(even) {
-                    background-color: #0000000d;
-                }
+                border: 1px solid var(--opacity-color);
 
-                &:hover {
-                    background-color: #0000001a;
+                td {
+                    padding: 25px;
                 }
             }
 
-            td {
-                font-size: 1em;
-            }
+            thead {
+                background-color: transparent;
 
-            .total {
-                text-align: right;
-                font-family: $bold;
-
-                &.global {
+                th {
                     color: $main-color;
+                    font-family: $extra-bold;
+                    padding: 10px;
+                    text-align: left;
+                }
+            }
+
+            tbody {
+                .category {
+                    font-family: $bold;
+                    text-align: right;
+                    white-space: nowrap;
+                }
+
+                .items {
+                    width: 100%;
+
+                    > div {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        gap: 1em;
+                        max-width: 60dvw;
+
+                        figure {
+                            @include transition(transform 150ms ease);
+                            align-items: center;
+                            display: flex;
+                            gap: 5px;
+                            margin: 5px;
+
+                            svg {
+                                font-size: calc(2em - 5px);
+                                opacity: .85;
+
+                                @each $technology in map-keys($technologies-colors) {
+                                    &[aria-label="#{$technology}"] {
+                                        fill: technology-color($technology);
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                @include transform(scale(.75));
+                            }
+                        }
+                    }
+                }
+
+                .total {
+                    color: $main-color;
+                    font-family: $bold-italic;
+
+                    &::before {
+                        color: var(--text-color);
+                        content: "Total: ";
+                        font-family: $regular;
+                    }
                 }
             }
         }

@@ -100,12 +100,12 @@ $main-color: #942648;
     transition: $transitions;
 }
 
-@mixin linear-gradient($linear-gradient-properties...) {
-    background: -moz-linear-gradient($linear-gradient-properties);
-    background: -ms-linear-gradient($linear-gradient-properties);
-    background: -o-linear-gradient($linear-gradient-properties);
-    background: -webkit-linear-gradient($linear-gradient-properties);
-    background: linear-gradient($linear-gradient-properties);
+@mixin linear-gradient($linear-gradient...) {
+    background: -moz-linear-gradient($linear-gradient);
+    background: -ms-linear-gradient($linear-gradient);
+    background: -o-linear-gradient($linear-gradient);
+    background: -webkit-linear-gradient($linear-gradient);
+    background: linear-gradient($linear-gradient);
 }
 
 @mixin sticky {

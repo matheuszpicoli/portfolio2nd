@@ -7,8 +7,22 @@ import DropdownMenu from "./utils/DropdownMenu"
 import ThemeButton from "./utils/ThemeButton"
 import TransitionLink from "./utils/TransitionLink"
 
+type Anchor = "projects" | "technologies"
+
 export default function Navbar(): React.JSX.Element {
     const openLink = (link: string, target: "_self" | "_blank" = "_self"): Window | null => window?.open(link, target, "noopener noreferrer")
+
+    const navigateToAnchor = (anchor: Anchor): void => {
+        const anchorLink = document.getElementById(anchor) as HTMLAnchorElement
+
+        const offset: number = 50
+        const anchorPosition: number = anchorLink.getBoundingClientRect().top + window.scrollY
+
+        window.scrollTo({
+            top: (anchorPosition) - offset,
+            behavior: "smooth"
+        })
+    }
 
     return (
         <header>
@@ -32,8 +46,14 @@ export default function Navbar(): React.JSX.Element {
                         </TransitionLink>
                     </DropdownMenu>
                     <DropdownMenu name="Projetos">
-                        <DropdownItem name="">
-                            Nada por enquanto
+                        <DropdownItem name="Meus projetos" onClick={(): void => navigateToAnchor("projects")}>
+                            Veja aqui os meus projetos mais recentes.
+                        </DropdownItem>
+                        <DropdownItem name="Skills" onClick={(): void => navigateToAnchor("technologies")}>
+                            Tecnologias que utilizo em meus projetos e que venho trabalhando nos últimos tempos.
+                        </DropdownItem>
+                        <DropdownItem name="Ficou interessado?">
+                            Compartilhe a sua ideia aqui, não leva nem 2 minutos.
                         </DropdownItem>
                     </DropdownMenu>
                     <DropdownMenu name="Contato">
@@ -51,10 +71,10 @@ export default function Navbar(): React.JSX.Element {
                         </DropdownItem>
                     </DropdownMenu>
                     <ThemeButton />
-                    <select name="languages" defaultValue={"Português"}>
-                        <option value="Português">Português</option>
-                        <option value="Inglês">English</option>
-                        <option value="Espanhol">Español</option>
+                    <select name="languages" defaultValue={"pt-br"}>
+                        <option value="pt-br">Português</option>
+                        <option value="en-us">English</option>
+                        <option value="es-es">Español</option>
                     </select>
                 </div>
             </nav>
