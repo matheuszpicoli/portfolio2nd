@@ -1,0 +1,82 @@
+$variant-colors: (
+    "success": #0ca71e,
+    "error": #a70c0c
+);
+
+@function variant-color($variant) {
+    @return map-get($variant-colors, $variant);
+}
+
+.toast {
+    @include animation(toast-appear 500ms ease forwards, toast-desappear 500ms 6000ms ease forwards);
+    @include backdrop-fiter(blur(5px));
+    @include transition(all 300ms ease);
+    @include user-select(none);
+    background-color: #00000010;
+    border-radius: 2.5px;
+    border: 2.5px solid transparent;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    padding: 1em;
+    position: fixed;
+    width: max-content;
+    z-index: 100;
+
+    @each $variant in map-keys($variant-colors) {
+        &[aria-valuetext="#{$variant}"] {
+            border-left-color: variant-color($variant);
+        }
+    }
+
+    .toast-body {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        max-width: 50%;
+        white-space: nowrap;
+
+        :where(.icon, .message) {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .icon {
+            svg {
+                height: 25px;
+                width: 25px;
+
+                @each $variant in map-keys($variant-colors) {
+                    &[aria-label="#{$variant}"] {
+                        fill: variant-color($variant);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include keyframes(toast-appear) {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 20px;
+    }
+}
+
+@include keyframes(toast-desappear) {
+    from {
+        left: 20px;
+    }
+
+    to {
+        display: none;
+        left: 0;
+        opacity: 0;
+    }
+}

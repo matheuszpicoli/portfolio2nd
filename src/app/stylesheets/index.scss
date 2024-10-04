@@ -249,6 +249,7 @@ body {
 @import "./Navbar.scss";
 @import "./Projects.scss";
 @import "./Technologies.scss";
+@import "./Toast.scss";
 
 @include keyframes(show-button) {
     from {

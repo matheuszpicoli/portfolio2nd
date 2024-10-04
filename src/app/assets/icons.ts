@@ -6,6 +6,8 @@
  * @returns {React.JSX.Element}
  */
 export { BiLogoTypescript as TypeScript } from "react-icons/bi"
+export { BiSolidMessageCheck as MessageSuccess } from "react-icons/bi"
+export { BiSolidMessageError as MessageError } from "react-icons/bi"
 export { CgRemote as RemoteDesktop } from "react-icons/cg"
 export { FaArrowTurnUp as Up } from "react-icons/fa6"
 export { FaAws as Aws } from "react-icons/fa6"

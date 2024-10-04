@@ -46,7 +46,7 @@ export default function Navbar(): React.JSX.Element {
                         </TransitionLink>
                     </DropdownMenu>
 
-                    <DropdownMenu name="Projetos">
+                    <DropdownMenu name="Profissional">
                         <DropdownItem name="Meus projetos" onClick={(): void => navigateToAnchor("projects")}>
                             Veja aqui os meus projetos mais recentes.
                         </DropdownItem>
