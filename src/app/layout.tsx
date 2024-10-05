@@ -1,6 +1,8 @@
 import "@/app/stylesheets/index.scss"
 import { ThemeProvider } from "@/app/hooks/contexts/themeContext"
 import type { Metadata } from "next"
+
+import Footer from "@/app/components/Footer"
 import Navbar from "@/app/components/Navbar"
 import ScrollToTopButton from "@/app/components/utils/ScrollToTopButton"
 
@@ -20,6 +22,7 @@ export default function RootLayout(props: Readonly<RootLayoutProps>) {
                     <ScrollToTopButton />
                     <Navbar />
                     {props.children}
+                    <Footer />
                 </body>
             </html>
         </ThemeProvider>

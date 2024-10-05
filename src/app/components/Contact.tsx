@@ -34,9 +34,15 @@ export default function Contact(): React.JSX.Element {
                 process.env.NEXT_PUBLIC_PUBLIC_KEY as string
             ) as EmailJSResponseStatus
 
-            setToast({ variant: "success", message: "Email enviado com sucesso!" })
+            setToast({
+                variant: "success",
+                message: "Email enviado com sucesso!"
+            })
         } catch (error: any) {
-            setToast({ variant: "error", message: "Ocorreu um erro ao enviar o email. Por favor, tente novamente." })
+            setToast({
+                variant: "error",
+                message: "Ocorreu um erro ao enviar o email. Por favor, tente novamente."
+            })
             console.error(error)
         } finally {
             setName("")

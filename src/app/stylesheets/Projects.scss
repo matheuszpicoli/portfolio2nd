@@ -72,7 +72,7 @@ $technologies-colors: (
 
                 .swiper-pagination-bullet {
                     background-color: var(--text-color);
-                    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #00000050);
+                    -webkit-box-reflect: $reflect;
 
                     &.swiper-pagination-bullet-active {
                         background-color: $main-color;
@@ -94,7 +94,6 @@ $technologies-colors: (
             overflow: hidden;
             position: relative;
             width: 40%;
-            -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #00000050);
 
             .video {
                 pointer-events: none;

@@ -102,6 +102,7 @@
                     cursor: pointer;
                     outline: none;
                     padding: 5px;
+                    -webkit-box-reflect: $reflect;
 
                     &:hover {
                         background-color: var(--text-color);

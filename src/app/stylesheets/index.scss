@@ -31,6 +31,8 @@ $regular: "RethinkSans Regular", sans-serif;
 $semi-bold-italic: "RethinkSans Semi Bold Italic", sans-serif;
 $semi-bold: "RethinkSans Semi Bold", sans-serif;
 
+$reflect: below 10px linear-gradient(transparent, #00000050);
+
 $dropdown-color: #cccccc20;
 $main-color: #942648;
 
@@ -208,7 +210,6 @@ body {
 }
 
 .scroll-to-top-button {
-    @include animation(show-button 500ms ease);
     @include transition(all 250ms ease);
     @include user-select(none);
     align-items: center;
@@ -227,6 +228,7 @@ body {
     z-index: 10;
 
     > svg {
+        @include transition(transform 150ms ease);
         cursor: pointer;
         fill: $main-color;
         margin-left: 5px;
@@ -239,24 +241,19 @@ body {
 
     &:active {
         @include transform(scale(.95));
+
+        > svg {
+            @include transform(translateY(-5px));
+        }
     }
 }
 
 /// @group imports --------------------------------------------------------------------------------
 @import "./AppsAndEquipments.scss";
-@import "./Home.scss";
 @import "./Contact.scss";
+@import "./Footer.scss";
+@import "./Home.scss";
 @import "./Navbar.scss";
 @import "./Projects.scss";
 @import "./Technologies.scss";
 @import "./Toast.scss";
-
-@include keyframes(show-button) {
-    from {
-        @include transform(scale(0) rotate(2turn));
-    }
-
-    to {
-        @include transform(scale(1) rotate(0));
-    }
-}

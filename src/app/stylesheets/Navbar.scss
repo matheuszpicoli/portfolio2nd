@@ -69,7 +69,7 @@ header {
                     overflow-x: auto;
                     position: absolute;
                     top: 100%;
-                    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #00000050);
+                    -webkit-box-reflect: $reflect;
 
                     &::-webkit-scrollbar {
                         width: 2.5px;
