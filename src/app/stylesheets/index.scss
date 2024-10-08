@@ -1,4 +1,7 @@
+@charset "UTF-8";
+
 /// @group fonts ----------------------------------------------------------------------------------
+
 $fonts: (
     "RethinkSans Bold Italic",
     "RethinkSans Bold",
@@ -20,6 +23,7 @@ $fonts: (
 }
 
 /// @group variables ------------------------------------------------------------------------------
+
 $bold-italic: "RethinkSans Bold Italic", sans-serif;
 $bold: "RethinkSans Bold", sans-serif;
 $extra-bold-italic: "RethinkSans Extra Bold Italic", sans-serif;
@@ -37,6 +41,7 @@ $dropdown-color: #cccccc20;
 $main-color: #942648;
 
 /// @group mixins ---------------------------------------------------------------------------------
+
 @mixin filter($filters...) {
     -ms-filter: $filters;
     -webkit-filter: $filters;
@@ -165,6 +170,7 @@ $main-color: #942648;
 }
 
 /// @group themes ---------------------------------------------------------------------------------
+
 .light-theme {
     --bg-color: #bababa;
     --text-color: #111111;
@@ -181,9 +187,32 @@ body {
     @include transition(all 250ms ease-in-out);
     background-color: var(--bg-color);
     color: var(--text-color);
+
+    @include keyframes(reveal-content) {
+        from {
+            @include filter(blur(5px));
+            @include transform(translateY(10em));
+            opacity: 0;
+        }
+
+        to {
+            @include filter(blur(0));
+            @include transform(translateY(0));
+            opacity: 1;
+        }
+    }
+
+    > * {
+        &:not(header, footer) {
+            @include animation(reveal-content 5000ms linear);
+            animation-timeline: view();
+            animation-range: entry 0% cover 30%;
+        }
+    }
 }
 
 /// @group global-styles --------------------------------------------------------------------------
+
 :root {
     font-size: 13px;
 }
@@ -249,6 +278,7 @@ body {
 }
 
 /// @group imports --------------------------------------------------------------------------------
+
 @import "./AppsAndEquipments.scss";
 @import "./Contact.scss";
 @import "./Footer.scss";
