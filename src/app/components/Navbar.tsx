@@ -74,12 +74,6 @@ export default function Navbar(): React.JSX.Element {
                     </DropdownMenu>
 
                     <ThemeButton />
-
-                    <select name="languages" defaultValue={"pt-br"}>
-                        <option value="pt-br">Português</option>
-                        <option value="en-us">English</option>
-                        <option value="es-es">Español</option>
-                    </select>
                 </div>
             </nav>
         </header>

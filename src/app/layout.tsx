@@ -1,4 +1,5 @@
 import "@/app/stylesheets/index.scss"
+
 import { ThemeProvider } from "@/app/hooks/contexts/themeContext"
 import type { Metadata } from "next"
 

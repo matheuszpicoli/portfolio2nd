@@ -125,13 +125,9 @@ header {
                         }
                     }
                 }
-
-                &:last-of-type {
-                    margin-right: 20px;
-                }
             }
 
-            :where(button[type="button"], select) {
+            button[type="button"] {
                 @include transition(all 250ms ease);
                 @include user-select(none);
                 background-color: transparent;
@@ -157,11 +153,6 @@ header {
                     outline: none;
                     opacity: 1;
                 }
-            }
-
-            option {
-                color: #000000;
-                font-family: $medium;
             }
 
             .theme-button {
