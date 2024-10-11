@@ -47,6 +47,9 @@ export default function Navbar(): React.JSX.Element {
                     </DropdownMenu>
 
                     <DropdownMenu name="Profissional">
+                        <DropdownItem name="Veja o repositório deste projeto" onClick={(): Window | null => openLink("https://github.com/matheuszpicoli/portfolio2nd", "_blank")}>
+                            Clique aqui para ver o repositório deste projeto.
+                        </DropdownItem>
                         <DropdownItem name="Meus projetos" onClick={(): void => navigateToAnchor("projects")}>
                             Veja aqui os meus projetos mais recentes.
                         </DropdownItem>
