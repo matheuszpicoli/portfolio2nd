@@ -18,7 +18,7 @@ export default function Apps(): React.JSX.Element {
                 <Card icon={Icon.OneNote} content="OneNote" category="Organização" />
                 <Card icon={Icon.Postman} content="Postman" category="API" />
                 <Card icon={Icon.Powershell} content="PowerShell" category="Terminal" />
-                <Card icon={Icon.RemoteDesktop} content="Área de trabalho remota" category="Serviço" />
+                <Card icon={Icon.RemoteDesktop} content="Area de trabalho remota" category="Serviço" />
                 <Card icon={Icon.Spotify} content="Spotify" category="Música" />
                 <Card icon={Icon.VirtualBox} content="Virtual Box" category="Serviço" />
                 <Card icon={Icon.VSCode} content="Visual Studio Code" category="Código" />

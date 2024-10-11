@@ -89,7 +89,11 @@ $technologies-colors: (
 
         .project {
             @include user-select(none);
+            align-items: center;
             border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
             height: max-content;
             overflow: hidden;
             position: relative;

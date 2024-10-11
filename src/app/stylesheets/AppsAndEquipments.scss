@@ -1,5 +1,6 @@
 $app-colors: (
     "anydesk": #fc4236,
+    "area-de-trabalho-remota": #c7390a,
     "canva": #0bb7ce,
     "chat-gpt": #242424,
     "dbeaver": #997f6c,
@@ -8,7 +9,6 @@ $app-colors: (
     "onenote": #ca64ea,
     "postman": #ff6c37,
     "powershell": #4d87ed,
-    "área-de-trabalho-remota": #c7390a,
     "spotify": #1ed760,
     "virtual-box": #21416b,
     "visual-studio-code": #219ede
@@ -39,14 +39,20 @@ $app-colors: (
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
         .card {
+            @include animation(appear-to-bottom 500ms both);
             @include linear-gradient(to top, transparent, var(--opacity-color));
-            @include transition(all 200ms ease);
             align-items: center;
             border-radius: 5px;
             border: 1.5px solid var(--opacity-color);
             display: flex;
             flex-direction: column;
             padding: 20px;
+
+            @for $child from 1 through 13 {
+                &:nth-child(#{$child}) {
+                    @include animation-delay(150ms * $child);
+                }
+            }
 
             .card-header {
                 align-items: center;
@@ -95,8 +101,20 @@ $app-colors: (
             }
 
             &:hover {
-                @include transform(scale(.9));
+                background: transparent;
             }
         }
+    }
+}
+
+@include keyframes(appear-to-bottom) {
+    from {
+        @include transform(translateY(100%) scale(0) skew(35deg));
+        opacity: 0;
+    }
+
+    to {
+        @include transform(translateY(0) scale(1) skew(0));
+        opacity: 1;
     }
 }

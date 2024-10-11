@@ -205,8 +205,8 @@ body {
     > * {
         &:not(header, footer) {
             @include animation(reveal-content 5000ms linear);
-            animation-timeline: view();
             animation-range: entry 0% cover 30%;
+            animation-timeline: view();
         }
     }
 }

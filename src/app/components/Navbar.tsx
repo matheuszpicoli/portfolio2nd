@@ -53,7 +53,7 @@ export default function Navbar(): React.JSX.Element {
                         <DropdownItem name="Skills" onClick={(): void => navigateToAnchor("technologies")}>
                             Tecnologias que utilizo em meus projetos e que venho trabalhando nos últimos tempos.
                         </DropdownItem>
-                        <DropdownItem name="Ficou interessado?" onClick={(): void => navigateToAnchor("contact")}>
+                        <DropdownItem name="Tenho interesse" onClick={(): void => navigateToAnchor("contact")}>
                             Compartilhe a sua ideia aqui, não leva nem 2 minutos.
                         </DropdownItem>
                     </DropdownMenu>

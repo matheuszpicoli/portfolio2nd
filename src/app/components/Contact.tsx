@@ -21,17 +21,11 @@ export default function Contact(): React.JSX.Element {
     async function sendEmail(event: React.FormEvent<HTMLFormElement>): Promise<void> {
         event.preventDefault()
 
-        const templateParams: MailTemplate = {
-            from_name: name,
-            message: message,
-            email: email
-        }
-
         try {
             await emailjs.send(
                 process.env.NEXT_PUBLIC_SERVICE_ID as string,
                 process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
-                templateParams,
+                { from_name: name, message: message, email: email } as MailTemplate,
                 process.env.NEXT_PUBLIC_PUBLIC_KEY as string
             ) as EmailJSResponseStatus
 

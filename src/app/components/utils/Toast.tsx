@@ -11,7 +11,7 @@ export interface ToastProps {
 
 export default function Toast(props: ToastProps): React.JSX.Element {
     return (
-        <div className="toast" aria-valuetext={props.variant}>
+        <div className="toast" role="alert" aria-live="assertive" aria-valuetext={props.variant}>
             <div className="toast-body">
                 {props.variant === "error" && (
                     <React.Fragment>
