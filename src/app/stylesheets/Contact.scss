@@ -43,6 +43,14 @@
                 cursor: pointer;
                 font-family: $italic;
                 width: max-content;
+
+                sup {
+                    color: $main-color;
+                    font-family: $extra-bold;
+                    font-size: 1.1em;
+                    margin-inline: 5px;
+                    vertical-align: middle;
+                }
             }
 
             :where(input[type="text"], input[type="email"], textarea) {
@@ -61,6 +69,17 @@
                 &:not(:focus) {
                     border-left-color: var(--text-color);
                     outline-color: transparent;
+
+                    &:invalid {
+                        border-left: 2px solid $main-color;
+                    }
+                }
+
+                &:focus {
+                    &:valid {
+                        border-left-color: var(--text-color);
+                        outline-color: var(--text-color);
+                    }
                 }
 
                 &::placeholder {
@@ -80,13 +99,8 @@
                     }
                 }
 
-                &:valid {
-                    border-left-color: var(--text-color);
-                    outline-color: var(--text-color);
-                }
-
                 &:invalid {
-                    @include animation(shake 500ms ease);
+                    @include animation(shake 800ms ease);
                 }
             }
 

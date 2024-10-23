@@ -63,15 +63,15 @@ export default function Contact(): React.JSX.Element {
                 </div>
                 <form className="contact-form" onSubmit={sendEmail}>
                     <div>
-                        <label htmlFor="name">Nome</label>
+                        <label htmlFor="name">Nome<sup>*</sup></label>
                         <input id="name" type="text" name="name" placeholder="Seu nome" onChange={(event: React.ChangeEvent<HTMLInputElement>): void => setName(event.target.value)} value={name} required />
                     </div>
                     <div>
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email">Email<sup>*</sup></label>
                         <input id="email" type="email" name="email" placeholder="exemplo@exemplo.com" onChange={(event: React.ChangeEvent<HTMLInputElement>): void => setEmail(event.target.value)} value={email} required />
                     </div>
                     <div>
-                        <label htmlFor="message">Mensagem</label>
+                        <label htmlFor="message">Mensagem<sup>*</sup></label>
                         <textarea id="message" name="message" placeholder="Sua mensagem" onChange={(event: React.ChangeEvent<HTMLTextAreaElement>): void => setMessage(event.target.value)} value={message} required />
                     </div>
                     <div>

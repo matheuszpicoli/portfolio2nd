@@ -18,9 +18,12 @@ header {
             font-family: $medium;
             font-size: 1.3em;
 
+            :where(a, span) {
+                cursor: pointer;
+            }
+
             a {
                 color: inherit;
-                cursor: pointer;
                 text-decoration: none;
             }
 
