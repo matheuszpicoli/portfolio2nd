@@ -42,18 +42,30 @@
             label {
                 cursor: pointer;
                 font-family: $italic;
+                position: relative;
                 width: max-content;
 
-                sup {
+                &::after {
+                    @include transition(all 300ms ease);
+                    bottom: 2.5px;
                     color: $main-color;
-                    font-family: $extra-bold;
-                    font-size: 1.1em;
-                    margin-inline: 5px;
-                    vertical-align: middle;
+                    content: "\10102";
+                    font-family: $bold;
+                    margin-left: 5px;
+                    position: absolute;
                 }
             }
 
-            :where(input[type="text"], input[type="email"], textarea) {
+            &:has(:where(input, textarea):valid) {
+                label {
+                    &::after {
+                        content: "\2713";
+                        color: #0ca71e;
+                    }
+                }
+            }
+
+            :where(input, textarea) {
                 @include transition(all 300ms ease);
                 background-color: transparent;
                 border-radius: 2.5px;
@@ -112,24 +124,8 @@
 
             &:last-of-type {
                 button[type="submit"] {
-                    @include transition(all 300ms ease);
-                    background-color: transparent;
-                    border-radius: 2.5px;
-                    border: 2px solid var(--text-color);
-                    color: var(--text-color);
-                    cursor: pointer;
-                    outline: none;
-                    padding: 5px;
+                    @include button;
                     -webkit-box-reflect: $reflect;
-
-                    &:hover {
-                        background-color: var(--text-color);
-                        color: var(--bg-color);
-                    }
-
-                    &:active {
-                        @include transform(scale(.98));
-                    }
                 }
             }
         }

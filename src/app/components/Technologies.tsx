@@ -71,7 +71,8 @@ const technologies: Array<Technologies> = [
             { name: "Grafana", icon: <Icon.Grafana aria-label="grafana" /> },
             { name: "Postman", icon: <Icon.Postman aria-label="postman" /> },
             { name: "Vercel", icon: <Icon.Vercel aria-label="vercel" /> },
-            { name: "VSCode", icon: <Icon.VSCode aria-label="vscode" /> }
+            { name: "VSCode", icon: <Icon.VSCode aria-label="vscode" /> },
+            { name: "ZSH", icon: <Icon.Zsh aria-label="zsh" /> }
         ]
     },
     {

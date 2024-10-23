@@ -141,31 +141,31 @@ $main-color: #942648;
 }
 
 @mixin button {
-    @include linear-gradient(to bottom, transparent, var(--opacity-color));
-    @include transition(transform 150ms ease);
+    @include transition(all 300ms ease);
     align-items: center;
-    border-radius: 5px;
-    border: none;
+    background-color: transparent;
+    border-radius: 2.5px;
+    border: 2px solid var(--text-color);
     color: var(--text-color);
     cursor: pointer;
     display: flex;
     flex-direction: row;
-    font-family: $medium;
-    font-size: calc(1rem + 1.5px);
     gap: 5px;
-    padding: 10px;
-    position: relative;
+    justify-content: center;
+    outline: none;
+    padding: 5px;
 
     > svg {
         cursor: pointer;
     }
 
     &:hover {
-        @include transform(scale(.95));
+        background-color: var(--text-color);
+        color: var(--bg-color);
     }
 
     &:active {
-        @include transform(scale(1));
+        @include transform(scale(.98));
     }
 }
 

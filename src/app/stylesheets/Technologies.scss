@@ -3,7 +3,7 @@ $technologies-colors: (
     "axios": #5a2fe0,
     "azure": #4bace5,
     "babel": #f0d534,
-    "bash": #f8f8f8,
+    "bash": null,
     "bootstrap": #721ff1,
     "css": #3a66ec,
     "dbeaver": #9a806d,
@@ -41,7 +41,8 @@ $technologies-colors: (
     "vercel": null,
     "vite": #9c59f8,
     "vscode": #219de1,
-    "webpack": #93d1f5
+    "webpack": #93d1f5,
+    "zsh": null
 );
 
 @function technology-color($technology) {

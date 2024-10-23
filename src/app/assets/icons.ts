@@ -1,5 +1,3 @@
-"use client"
-
 /**
  * @description all application icons
  * @type {IconType}
@@ -64,6 +62,7 @@ export { SiVirtualbox as VirtualBox } from "react-icons/si"
 export { SiVisualstudiocode as VSCode } from "react-icons/si"
 export { SiVite as Vite } from "react-icons/si"
 export { SiWebpack as Webpack } from "react-icons/si"
+export { SiZsh as Zsh } from "react-icons/si"
 export { VscAzure as Azure } from "react-icons/vsc"
 export { VscGithub as GithubDesktop } from "react-icons/vsc"
 export { VscJson as Json } from "react-icons/vsc"
