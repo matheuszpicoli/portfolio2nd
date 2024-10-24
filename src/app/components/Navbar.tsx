@@ -62,7 +62,7 @@ export default function Navbar(): React.JSX.Element {
                     </DropdownMenu>
 
                     <DropdownMenu name="Contato">
-                        <DropdownItem name="Currículo">
+                        <DropdownItem name="Currículo" onClick={(): Window | null => openLink("./pdf/Currículo.pdf", "_blank")}>
                             Clique aqui para visualizar meu currículo em PDF.
                         </DropdownItem>
                         <DropdownItem name="Email" onClick={(): Window | null => openLink("mailto: matheuspicoli2011@gmail.com")}>
