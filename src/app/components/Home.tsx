@@ -1,5 +1,8 @@
 import React from "react"
 
+import Image from "next/image"
+import { default as profile } from "@/app/assets/profile.jpeg"
+
 export default function Home(): React.JSX.Element {
     const birthDate: Date = new Date(2003, 2, 18)
     let age: number = new Date().getFullYear() - birthDate.getFullYear()
@@ -8,7 +11,12 @@ export default function Home(): React.JSX.Element {
 
     return (
         <section className="home">
-            <div className="image"></div>
+            <div className="image">
+                <figure>
+                    <Image src={profile} alt="Foto de perfil" priority={true} />
+                    <div className="svg-mask"></div>
+                </figure>
+            </div>
             <div className="main-content">
                 <h1>Transformo as suas aplicações deixando elas</h1>
                 <p>Me chamo Matheus e tenho {age} anos. Gosto de desenvolver a maioria das minhas aplicações com <strong>Next</strong>, <strong>TypeScript</strong> e <strong>SCSS</strong>, mas também posso e consigo desenvolver com outras tecnologias, sou bem aberto para isso.</p>

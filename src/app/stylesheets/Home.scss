@@ -12,11 +12,35 @@
     }
 
     .image {
-        @include filter(opacity(.9));
         @include user-select(none);
-        background: url(../assets/profile.jpeg) center/contain no-repeat;
-        mask: url(../assets/ink-splash.svg) no-repeat center / 100%;
+        border-radius: 15px 50%;
+        overflow: hidden;
         pointer-events: none;
+        position: relative;
+
+        figure {
+            all: unset;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+                z-index: 10;
+            }
+
+            .svg-mask {
+                @include linear-gradient(to bottom, transparent, var(--bg-color), var(--bg-color));
+                @include transform(translate(-50%));
+                bottom: -90px;
+                height: 100%;
+                left: 50%;
+                mask: url(../assets/ink-splash.svg) no-repeat center / cover;
+                pointer-events: none;
+                position: absolute;
+                width: 100%;
+                z-index: 20;
+            }
+        }
     }
 
     .main-content {
